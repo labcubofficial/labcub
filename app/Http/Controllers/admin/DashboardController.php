@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Blog;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +16,10 @@ class HomeController extends Controller
     public function index()
     {
         $data = array();
-        $data['title'] = 'Home';
-        $data['parent_categories'] = Category::where('status', '0')->where('parent_id','0')->get();
-        $data['sub_categories'] = Category::where('status', '0')->where('parent_id','<>','0')->get();
+        $data['title'] = 'Dashboard';
+        $data['tab_active'] = true;
 
-        $data['blogs'] = Blog::where('is_recommended','1')->get();
-        
-        return view('front.landing.landing',$data);
+        return view('admin.dashboard.dashboard',$data);
     }
 
     /**

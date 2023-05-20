@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Blog;
 
-class HomeController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +17,10 @@ class HomeController extends Controller
     public function index()
     {
         $data = array();
-        $data['title'] = 'Home';
-        $data['parent_categories'] = Category::where('status', '0')->where('parent_id','0')->get();
-        $data['sub_categories'] = Category::where('status', '0')->where('parent_id','<>','0')->get();
+        $data['title'] = 'Blog';
+        $data['blogs'] = Blog::all();
 
-        $data['blogs'] = Blog::where('is_recommended','1')->get();
-        
-        return view('front.landing.landing',$data);
+        return view('admin.blog.blog', $data);
     }
 
     /**
@@ -33,7 +30,10 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        $data['parent_category'] = Category::where('status','1')->where('parent_id','0')->pluck('category_name', 'id');
+        $data['sub_category'] = Category::where('status','1')->where('parent_id','<>','0')->pluck('category_name', 'id');
+
+        return view('admin.blog.blog_edit', $data);
     }
 
     /**
@@ -44,7 +44,17 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Blog::insert([
+            'title' => $request->title,
+            'short_description' => $request->description,
+            'body' => $request->body,
+            'slug' => $request->slug,
+            'category_id' => $request->parent_category,
+            'subcategory_id' => $request->sub_category,
+            'image' => null,
+        ]);
+
+        return Redirect()->intended('admin/blog');
     }
 
     /**

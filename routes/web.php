@@ -17,4 +17,15 @@ Route::get('/', 'front\HomeController@index');
 
 Route::prefix('admin')->group(function(){
     Route::resource('login','admin\AdminLoginController');
+    Route::get('logout','admin\AdminLoginController@Logout');
+
+    Route::resource('dashboard','admin\DashboardController');
+    Route::resource('category','admin\CategoryController');
+    Route::resource('subcategory','admin\SubCategoryController');
+    Route::resource('blog','admin\BlogController');
+    
+    Route::prefix('settings')->group(function(){
+        Route::resource('blog','admin\BlogController');        
+    });
+    
 });

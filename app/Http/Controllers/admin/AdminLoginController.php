@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Hash;
 
 class AdminLoginController extends Controller
 {
@@ -35,7 +38,20 @@ class AdminLoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $credentials = $request->only('email','password');
+
+        $user = User::where('email',$credentials['email'])->first();
+
+        if (!$user || !Hash::check($credentials['password'], $user->password)) {
+            return redirect()->back()->withErrors(['email' => 'Invalid login credentials.']);
+        }
+
+        return redirect()->intended('admin/dashboard');
     }
 
     /**
@@ -81,5 +97,15 @@ class AdminLoginController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function Logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->intended('admin/login');
     }
 }
