@@ -30,10 +30,6 @@
 				<li class="sidebar-nav-item"><a href="{{ url('admin/blog') }}" class="sidebar-nav-link{{ request()->is('admin/blog') ? ' sidebar-active' : '' }}">Blog</a></li>
 				<li class="sidebar-nav-item"><a href="" class="sidebar-nav-link{{ request()->is('admin/') ? ' sidebar-active' : '' }}">Monitization</a></li>
 				<li class="sidebar-nav-item"><a href="" class="sidebar-nav-link{{ request()->is('admin/') ? ' sidebar-active' : '' }}">Settings</a></li>
-					<ul class="" style="padding-left: 1em; list-style: none;">
-						<li class="sidebar-nav-item"><a href="" class="sidebar-nav-link{{ request()->is('admin/') ? ' sidebar-active' : '' }}">Accounts</a></li>
-						<li class="sidebar-nav-item"><a href="" class="sidebar-nav-link{{ request()->is('admin/') ? ' sidebar-active' : '' }}">Third-Party</a></li>
-					</ul>
 			</nav>
 		</div>
 		<main>

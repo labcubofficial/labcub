@@ -18,8 +18,8 @@ class HomeController extends Controller
     {
         $data = array();
         $data['title'] = 'Home';
-        $data['parent_categories'] = Category::where('status', '0')->where('parent_id','0')->get();
-        $data['sub_categories'] = Category::where('status', '0')->where('parent_id','<>','0')->get();
+        $data['parent_categories'] = Category::where('status', '1')->where('parent_id','0')->get();
+        $data['sub_categories'] = Category::where('status', '1')->where('parent_id','<>','0')->get();
 
         $data['blogs'] = Blog::where('is_recommended','1')->get();
         
@@ -55,7 +55,14 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = array();
+
+        $blog = Blog::where('id', $id)->first();
+
+        $data['title'] = $blog->title;
+        $data['blog'] = $blog;
+
+        return view('front.blog.blog', $data);
     }
 
     /**

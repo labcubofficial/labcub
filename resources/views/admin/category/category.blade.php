@@ -114,7 +114,7 @@
 
     	// Delete Data in Ajax
     	$(document).on('click','.delete',function(event){
-    		let confirm_del = confirm('Are you sure you want to delete!');
+			let confirm_del = confirm('Are you sure you want to delete!');
     		if(confirm_del){
     			event.preventDefault();
 	    		var id = $(this).data('id');
@@ -129,8 +129,6 @@
 	    				console.log('Error', response);
 	    			}
 	    		});
-    		}else{
-    			console.log('canceled');
     		}
     	});
 

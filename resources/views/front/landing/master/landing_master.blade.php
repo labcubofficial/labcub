@@ -28,7 +28,7 @@
 		@yield('content')
 	</main>
 	<footer>
-		<h1 class="header-text">Footer</h1>
+		<img src="">
 		<div class="footer-copyright">
 			<span class="footer-copyright-text">© {{ date('Y') }} Labcub Inc. All Rights Reserved.</span>
 		</div>

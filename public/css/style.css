@@ -2,14 +2,15 @@
     --primary: #20232A;
     --secondary: ;
     --primary-text: #61DAFB;
+    --header-text: #555555;
     --white: #FFFFFF;
     --black: #000000;
+    --font-poppins: poppins;
 }
-
-body {font-family: poppins;}
-
 * {padding: 0;margin: 0;}
-main {height: auto;}
+body {font-family: var(--font-poppins); max-width: 100%;}
+section{padding: 3em;max-width: 100%;}
+main {min-height: 500px;}
 header {max-width: 100%;height: 70px;background: var(--primary);box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 display: flex;align-items: center;justify-content: space-between;padding: 0 3em;}
 footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 3em;}
@@ -21,34 +22,17 @@ footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 3em
 .header-text {color: var(--primary-text)}
 .footer-copyright{color: var(--white);font-size: 14px;text-align: center;}
 
-.card{
-	position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: var(--white);
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.25rem;
-}
-
-.lc-card{
-	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-	margin: 0 0 1em 0;
-	width: 200px;
-	height: 200px;
+.lc-header{
+    font-size: 28px;
+    text-align: center;
+    color: var(--header-text);
 }
 
 .lc-blog-card{
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-    width: 350px;
+    width: 330px;
     height: 400px;
+    cursor: pointer;
 }
 
 .lc-blog-contain{
@@ -56,11 +40,59 @@ footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 3em
 }
 
 .lc-blog-image{
-    background-color: var(--primary);
-    height: 120px;
+    height: 200px;
 }
 
-.lc-blog-desc{
+.lc-blog-img{
+    width: 330px;
+    height: 200px;
+}
+
+.lc-blog-content{
     padding: 8px;
 }
 
+.lc-blog-link{
+    text-decoration: none;
+    color: #000;
+}
+
+.banner{
+    max-width: 100%;
+    min-height: 300px;
+    background-color: grey;
+}
+
+.category-item{
+    width: 150px;
+    height: 25px;
+    padding: 0 1em 0 1em;
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+
+/*Blog*/
+.blog-container{
+    max-width: 100%;
+    display: flex;
+}
+
+.blog-menu {
+    width: 20%;
+    padding: 1em;
+    background-color: #2E2E2E;
+}
+
+.blog-content {
+    width: 80%;
+    min-height: 400px;
+    padding: 2em;
+}
+
+.blog-content .container{
+    width: auto;
+}
+
+.btn {
+    padding: 8px;
+}

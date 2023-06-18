@@ -1,6 +1,10 @@
 @extends('admin.master.dashboard_master')
 
 @section('content')
+	<h1>0</h1>
+	<span>Views</span>
+	<h1>0</h1>
+	<span>Views</span>
 	<h1>Dashboard</h1>
 	<span>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

@@ -42,10 +42,6 @@ class CategoryController extends Controller
         return view('admin.category.category',$data);
     }
 
-    public function ajaxdata(Request $request){
-        
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -136,5 +132,5 @@ class CategoryController extends Controller
         }
         
         return response()->json(['success' => true]);
-    }
+    }    
 }
