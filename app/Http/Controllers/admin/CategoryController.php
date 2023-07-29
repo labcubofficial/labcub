@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Yajra\DataTables\DataTables;
+use File;
 
 class CategoryController extends Controller
 {
@@ -21,7 +22,7 @@ class CategoryController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('image', function($row){
-                        $image = isset($row->image)?'<img src="'.asset('asset/images/category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
+                        $image = isset($row->image)?'<img src="'.asset('assets/images/category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
                         return $image;
                     })
                     ->addColumn('status', function($row){
@@ -61,10 +62,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $categories = Category::all();
-
-        if($request->hasFile($request->image)){
+        if(isset($request->image)){
             $filename = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('asset/images/category'), $filename);
+            $request->image->move(public_path('assets/images/category'), $filename);
         }else{
             $filename = null;
         }
@@ -76,9 +76,11 @@ class CategoryController extends Controller
             'category_name' => $request->category_name,
             'image' => $filename,
             'status' => $status,
+            'created_at' => date('Y-m-d H:i:s'),
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
-        return response()->json(['message' => 'Data uploaded successfully']);
+        return redirect()->intended('admin/category');
     }
 
     /**
@@ -124,12 +126,13 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findorFail($id);
-        $category->delete();
         
         if(isset($category->image)){
-            $image = url('asset/images/category'.'/'.$category->image);
-            File::delete($image);
+            $imagePath = 'assets/images/category/'.$category->image;
+            File::delete($imagePath);
         }
+
+        $category->delete();
         
         return response()->json(['success' => true]);
     }    

@@ -57,7 +57,11 @@ class HomeController extends Controller
     {
         $data = array();
 
-        $blog = Blog::where('id', $id)->first();
+        $blog = Blog::find($id);
+
+        if(empty($blog)){
+            return view('front.error.404');;
+        }
 
         $data['title'] = $blog->title;
         $data['blog'] = $blog;

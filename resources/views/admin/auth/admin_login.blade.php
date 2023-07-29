@@ -1,4 +1,4 @@
-@extends('admin.auth.master.admin_auth')
+@extends('admin.master.admin_auth')
 
 @section('content')
 	{!! Form::open(['route'=>'login.store', 'method'=>'POST', 'class' => 'login']) !!}

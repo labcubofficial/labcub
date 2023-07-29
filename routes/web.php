@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'front\HomeController@index');
 Route::get('blog/{id}', 'front\HomeController@show');
-Route::fallback('front\ErrorController@error404');
+// Route::fallback('front\ErrorController@error404');
 
 Route::prefix('admin')->group(function(){
     Route::resource('login','admin\AdminLoginController');
@@ -30,8 +30,4 @@ Route::prefix('admin')->group(function(){
         Route::resource('blog','admin\BlogController');
     });
     
-});
-
-Route::get('design', function(){
-    return view('front.design');
 });
