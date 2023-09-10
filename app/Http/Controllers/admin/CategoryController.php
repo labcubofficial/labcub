@@ -61,15 +61,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $categories = Category::all();
         if(isset($request->image)){
             $filename = time() . '.' . $request->image->getClientOriginalExtension();
             $request->image->move(public_path('assets/images/category'), $filename);
         }else{
             $filename = null;
         }
-
-        $status = isset($request->status)?$request->status:0;
+        
+        $status = isset($request->status)?'1':'0';
 
         Category::insert([
             'parent_id' => 0,
@@ -77,10 +76,9 @@ class CategoryController extends Controller
             'image' => $filename,
             'status' => $status,
             'created_at' => date('Y-m-d H:i:s'),
-            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
-        return redirect()->intended('admin/category');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -102,7 +100,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::find($id);
+        return response()->json($categories);
     }
 
     /**

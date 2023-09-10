@@ -20,6 +20,7 @@ class CreateBlogsTable extends Migration
             $table->string('title',100)->nullable();
             $table->string('short_description',255)->nullable();
             $table->text('body');
+            $table->text('menu');
             $table->string('image',100)->nullable();
             $table->string('slug',255)->nullable();
             $table->enum('is_recommended',[0,1])->default(0)->comment('0->not_recommended, 1->recommended');

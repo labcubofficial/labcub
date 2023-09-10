@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'front\HomeController@index');
-Route::get('blog/{id}', 'front\HomeController@show');
+Route::get('blogs', 'front\BlogController@index');
+Route::get('blog/{category}/{sub_category}/{slug}', 'front\BlogController@show');
 // Route::fallback('front\ErrorController@error404');
 
 Route::prefix('admin')->group(function(){
@@ -25,6 +26,7 @@ Route::prefix('admin')->group(function(){
     Route::resource('category','admin\CategoryController');
     Route::resource('subcategory','admin\SubCategoryController');
     Route::resource('blog','admin\BlogController');
+    Route::resource('subscription','admin\SubscriptionController');
     
     Route::prefix('settings')->group(function(){
         Route::resource('blog','admin\BlogController');

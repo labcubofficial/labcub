@@ -28,6 +28,7 @@
 				<li class="sidebar-nav-item"><a href="{{ url('admin/category') }}" class="sidebar-nav-link{{ request()->is('admin/category') ? ' sidebar-active' : '' }}">Category</a></li>
 				<li class="sidebar-nav-item"><a href="{{ url('admin/subcategory') }}" class="sidebar-nav-link{{ request()->is('admin/subcategory') ? ' sidebar-active' : '' }}">Sub Category</a></li>
 				<li class="sidebar-nav-item"><a href="{{ url('admin/blog') }}" class="sidebar-nav-link{{ request()->is('admin/blog') ? ' sidebar-active' : '' }}">Blog</a></li>
+				<li class="sidebar-nav-item"><a href="{{ url('admin/subscription') }}" class="sidebar-nav-link{{ request()->is('admin/subscription') ? ' sidebar-active' : '' }}">Subscription</a></li>
 				<li class="sidebar-nav-item"><a href="" class="sidebar-nav-link{{ request()->is('admin/') ? ' sidebar-active' : '' }}">Monitization</a></li>
 				<li class="sidebar-nav-item"><a href="" class="sidebar-nav-link{{ request()->is('admin/') ? ' sidebar-active' : '' }}">Settings</a></li>
 			</nav>

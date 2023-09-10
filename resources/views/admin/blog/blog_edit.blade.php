@@ -10,6 +10,9 @@
 		{!! Form::label('description', 'Description') !!}<br>
 		{!! Form::text('description',null,['class' => 'form-control']) !!}
 
+		{!! Form::label('menu', 'Menu') !!}<br>
+		{!! Form::text('menu',null,['class' => 'form-control']) !!}
+
 		{!! Form::label('slug', 'Slug') !!}<br>
 		{!! Form::text('slug',null,['class' => 'form-control']) !!}
 

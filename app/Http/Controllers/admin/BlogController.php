@@ -47,6 +47,7 @@ class BlogController extends Controller
         Blog::insert([
             'title' => $request->title,
             'short_description' => $request->description,
+            'menu' => $request->menu,
             'body' => $request->body,
             'slug' => $request->slug,
             'category_id' => $request->parent_category,

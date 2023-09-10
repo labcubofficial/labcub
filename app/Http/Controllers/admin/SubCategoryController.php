@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Yajra\DataTables\DataTables;
+use File;
 
 class SubCategoryController extends Controller
 {
@@ -21,7 +22,7 @@ class SubCategoryController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('image', function($row){
-                        $image = isset($row->image)?'<img src="'.asset('asset/images/category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
+                        $image = isset($row->image)?'<img src="'.asset('assets/images/sub_category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
                         return $image;
                     })
                     ->addColumn('status', function($row){
@@ -63,25 +64,24 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $categories = Category::all();
-
-        if($request->hasFile($request->image)){
+        if(isset($request->image)){
             $filename = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('asset/images/category'), $filename);
+            $request->image->move(public_path('assets/images/sub_category'), $filename);
         }else{
             $filename = null;
         }
 
-        $status = isset($request->status)?$request->status:0;
+        $status = isset($request->status)?'1':'0';
 
         Category::insert([
             'parent_id' => $request->parent_category,
             'category_name' => $request->category_name,
             'image' => $filename,
             'status' => $status,
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
-        return response()->json(['message' => 'Data uploaded successfully']);
+        return redirect()->route('subcategory.index');
     }
 
     /**
@@ -127,12 +127,15 @@ class SubCategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findorFail($id);
-        $category->delete();
-        
+
+        // Deleting image
         if(isset($category->image)){
-            $image = url('asset/images/category'.'/'.$category->image);
-            File::delete($image);
+            $imagePath = 'assets/images/sub_category/'.$category->image;
+            File::delete($imagePath);
         }
+
+        // Deleting data from database
+        $category->delete();
         
         return response()->json(['success' => true]);
     }

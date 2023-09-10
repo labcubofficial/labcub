@@ -68,6 +68,10 @@
 	</div>
 	{{-- Delete Modal End --}}
 
+	<div class="loading" id="loading">
+		<span>Loading...</span>
+	</div>
+
 @endsection
 
 <script type="text/javascript">
@@ -95,6 +99,7 @@
 
 
     	$('#form-submit').on('submit',function() {
+    		$('#loading').show();
     		e.preventDefault();
     		var formdata = $('#form-submit').serialize();
     		$.ajax({
@@ -134,7 +139,26 @@
 
     	// Edit Data in Ajax
     	$(document).on('click','.edit', function(){
-    		$('#category-modal').show();
+    		$('#loading').show();
+    		var id = $(this).data('id');
+    		$.ajax({
+    			type: 'GET',
+    			url: "{{ route('category.edit', ':id') }}".replace(':id', id),
+    			success: function(response){
+    				$('#category_name').val(response.category_name);
+    				if(response.category_name == '1'){
+    					$('#status').val(1);
+    				}else{
+    					$('#status').val(0);
+    				}
+    				$('#submit').val('Update');
+    				$('#loading').hide();
+    				$('#category-modal').show();
+    			},
+    			error: function(response){
+    				console.log('Error', response);
+    			}
+    		});
     	});
 
     	// Refresh Data

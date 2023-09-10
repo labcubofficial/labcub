@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    public static function category($id)
+    {
+        return self::find($id);
+    }
 }
