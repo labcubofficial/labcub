@@ -7,7 +7,7 @@
 				<div class="lc-blog-card">
 					<div class="lc-blog-contain">
 						<div class="lc-blog-image">
-							<img src="{{ url('assets/images/blog/'.$blog['image']) }}" class="lc-blog-img" alt="blog title">
+							<img src="{{ url('media/blog/'.$blog['image']) }}" class="lc-blog-img" alt="blog title">
 						</div>
 						<div class="lc-blog-content">
 							<h2 class="lc-blog-title">{{ $blog['title'] }}</h2>

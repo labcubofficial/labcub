@@ -18,18 +18,22 @@ Route::get('blogs', 'front\BlogController@index');
 Route::get('blog/{category}/{sub_category}/{slug}', 'front\BlogController@show');
 // Route::fallback('front\ErrorController@error404');
 
-Route::prefix('admin')->group(function(){
-    Route::resource('login','admin\AdminLoginController');
-    Route::get('logout','admin\AdminLoginController@Logout');
+Route::get('send/mail', 'Mail\MailController@sendMail');
 
-    Route::resource('dashboard','admin\DashboardController');
-    Route::resource('category','admin\CategoryController');
-    Route::resource('subcategory','admin\SubCategoryController');
-    Route::resource('blog','admin\BlogController');
-    Route::resource('subscription','admin\SubscriptionController');
-    
-    Route::prefix('settings')->group(function(){
+Route::resource('admin/login','admin\AdminLoginController');
+// Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function(){
+        Route::get('logout','admin\AdminLoginController@Logout');
+
+        Route::resource('dashboard','admin\DashboardController');
+        Route::resource('category','admin\CategoryController');
+        Route::resource('subcategory','admin\SubCategoryController');
         Route::resource('blog','admin\BlogController');
+        Route::resource('subscription','admin\SubscriptionController');
+        
+        Route::prefix('settings')->group(function(){
+            Route::resource('blog','admin\BlogController');
+        });
+        
     });
-    
-});
+// });

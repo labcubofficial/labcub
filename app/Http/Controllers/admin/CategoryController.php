@@ -22,7 +22,7 @@ class CategoryController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('image', function($row){
-                        $image = isset($row->image)?'<img src="'.asset('assets/images/category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
+                        $image = isset($row->image)?'<img src="'.asset('media/category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
                         return $image;
                     })
                     ->addColumn('status', function($row){
@@ -63,7 +63,7 @@ class CategoryController extends Controller
     {
         if(isset($request->image)){
             $filename = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('assets/images/category'), $filename);
+            $request->image->move(public_path('media/category'), $filename);
         }else{
             $filename = null;
         }
@@ -127,7 +127,7 @@ class CategoryController extends Controller
         $category = Category::findorFail($id);
         
         if(isset($category->image)){
-            $imagePath = 'assets/images/category/'.$category->image;
+            $imagePath = 'media/category/'.$category->image;
             File::delete($imagePath);
         }
 

@@ -22,7 +22,7 @@ class SubCategoryController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('image', function($row){
-                        $image = isset($row->image)?'<img src="'.asset('assets/images/sub_category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
+                        $image = isset($row->image)?'<img src="'.asset('media/sub_category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
                         return $image;
                     })
                     ->addColumn('status', function($row){
@@ -66,7 +66,7 @@ class SubCategoryController extends Controller
     {
         if(isset($request->image)){
             $filename = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('assets/images/sub_category'), $filename);
+            $request->image->move(public_path('media/sub_category'), $filename);
         }else{
             $filename = null;
         }
@@ -130,7 +130,7 @@ class SubCategoryController extends Controller
 
         // Deleting image
         if(isset($category->image)){
-            $imagePath = 'assets/images/sub_category/'.$category->image;
+            $imagePath = 'media/sub_category/'.$category->image;
             File::delete($imagePath);
         }
 

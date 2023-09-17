@@ -9,7 +9,7 @@
 			<span>Navigate through our comprehensive archives to uncover gems of wisdom, stay up-to-date with the latest industry trends, and experiment with cutting-edge technologies. We empower you to innovate, experiment, and create.</span>
 		</div>
 		<div class="banner-right">
-			<img class="hero-image" src="{{ url('img/landing/hero.svg') }}">
+			<img class="hero-image" src="{{ url('images/landing/hero.svg') }}">
 		</div>
 	</section>
 	{{-- Banner End --}}
@@ -31,7 +31,7 @@
 		<div class="category-grid">
 			@foreach($parent_categories as $parent_category)
 				<div class="category-item">
-					<img class="category-image" src="{{ url('assets/images/category/'.$parent_category->image) }}">
+					<img class="category-image" src="{{ url('media/category/'.$parent_category->image) }}">
 					<span>{{ $parent_category->category_name }}</span>
 				</div>
 			@endforeach
@@ -50,7 +50,7 @@
 				<div class="lc-blog-card">
 					<div class="lc-blog-contain">
 						<div class="lc-blog-image">
-							<img src="{{ url('assets/images/blog/'.$blog['image']) }}" class="lc-blog-img" alt="blog title">
+							<img src="{{ url('media/blog/'.$blog['image']) }}" class="lc-blog-img" alt="blog title">
 						</div>
 						<div class="lc-blog-content">
 							<h2 class="lc-blog-title">{{ $blog['title'] }}</h2>
