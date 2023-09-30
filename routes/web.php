@@ -18,6 +18,9 @@ Route::get('blogs', 'front\BlogController@index');
 Route::get('blog/{category}/{sub_category}/{slug}', 'front\BlogController@show');
 // Route::fallback('front\ErrorController@error404');
 
+Route::get('legal/privacy_policy', function(){ return view('front.legal.privacy_policy'); });
+Route::get('legal/terms_and_condition', function(){ return view('front.legal.terms_and_condition'); });
+Route::get('legal/about_us', function(){ return view('front.legal.about_us'); });
 Route::get('send/mail', 'Mail\MailController@sendMail');
 
 Route::resource('admin/login','admin\AdminLoginController');

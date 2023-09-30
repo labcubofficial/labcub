@@ -6,7 +6,7 @@
 	<section class="banner">
 		<div class="banner-left">
 			<h1>Where Code Comes to Life: Ignite Your Passion for Programming</h1>
-			<span>Navigate through our comprehensive archives to uncover gems of wisdom, stay up-to-date with the latest industry trends, and experiment with cutting-edge technologies. We empower you to innovate, experiment, and create.</span>
+			<span class="banner-header">Navigate through our comprehensive archives to uncover gems of wisdom, stay up-to-date with the latest industry trends, and experiment with cutting-edge technologies. We empower you to innovate, experiment, and create.</span>
 		</div>
 		<div class="banner-right">
 			<img class="hero-image" src="{{ url('images/landing/hero.svg') }}">
@@ -79,9 +79,13 @@
 
 	{{-- Subscribe Start --}}
 	<section class="subscribe">
-		<span style="color: var(--white);">Subscribe to our newsletter to get your weekly dose of news, updates, tips and special offers.</span>
+		<img src="{{ url('images/newsletter.svg') }}" class="subscribe-image" alt="news-feed"/>
+		<h1>Subscribe to our newsletter</h1>
+		<div class="subscribe-desc">
+			<p>Be the first to get exclusive offers and the latest news on our product directry in your inbox.</p>
+		</div>
 		<input type="email" name="email" id="email" placeholder="Email"><br>
-		<button class="btn btn-subscribe mr" id="btn-subscribe">Subscribe</button>
+		<button class="btn btn-subscribe" id="btn-subscribe">Subscribe</button>
 	</section>
 	{{-- Subscribe Start --}}
 
@@ -90,7 +94,6 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#btn-subscribe').on('click',function() {
-			confirm('By clicking your confirmed to recieve mail from Labcub');
 			$.ajax({
 				headers: { 
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]'). attr('content') 
@@ -103,12 +106,28 @@
         		},
         		dataType: 'json',
         		success: function(response) {
+        			$('#email').val('');
             		alert('Subscribed successfully');
         		},
         		error: function(response) {
             		console.log(response);
         		}
     		});
+		});
+
+		$('#email').css('border', '2px solid #FFFFFF00');
+
+		$('#email').on('keyup', function(){
+			var email = $('#email').val();
+			var regex = /@.*\.com$/;
+
+			if(regex.test(email)){
+				$('#email').css('border', '2px solid var(--success)');
+				$('#btn-subscribe').css('cursor', 'pointer');
+			}else{
+				$('#email').css('border', '2px solid var(--error)');
+				$('#btn-subscribe').css('cursor', 'not-allowed');
+			}
 		});
 	});
 </script>

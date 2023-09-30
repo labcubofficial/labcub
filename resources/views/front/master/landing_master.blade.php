@@ -12,7 +12,7 @@
 <body>
 	<header>
 		<div class="menu-btn" id="menu-btn">
-			<svg class="menu-svg" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32"><path d="M4 10h24a2 2 0 0 0 0-4H4a2 2 0 0 0 0 4zm24 4H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4zm0 8H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4z" fill="#FFFFFF" class="fill-000000"></path></svg>
+			<img class="menu-svg" src="{{ url('images/social/menu.svg') }}">
 			<div class="menu-items" id="menu-items"></div>
 		</div>
 		<div class="header-label">
@@ -24,7 +24,7 @@
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Service</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Documention</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blog</a></li>
-				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">About us</a></li>
+				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About us</a></li>
 			</ul>
 		</div>
 	</header>
@@ -33,6 +33,10 @@
 	</main>
 	<footer>
 		<div class="footer-links">
+			<div class="footer-nav footer-brand">
+				<a href="{{ url('/') }}"><h1 class="header-text">Labcub</h1><a>
+				<span class="footer-desc">Empowering digital success through expert coding. Your vision, our commitment.</span>
+			</div>
 			<div class="footer-nav">
 				{{-- <h3 class="footer-links-header">Menu</h3> --}}
 				<ul>
@@ -45,17 +49,29 @@
 			<div class="footer-nav">
 				{{-- <h3 class="footer-links-header">Legal</h3> --}}
 				<ul>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Privacy Policy</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Terms & conditions</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">About us</a></li>
+					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/privacy_policy') }}">Privacy Policy</a></li>
+					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/terms_and_condition') }}">Terms & conditions</a></li>
+					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/about_us') }}">About us</a></li>
 				</ul>
 			</div>
 			<div class="footer-nav">
 				{{-- <h3 class="footer-links-header">Social</h3> --}}
-				<ul>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Instagram</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Twitter</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Whatsapp</a></li>
+				<ul class="social-icons">
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://www.instagram.com/labcub_official" target="_blank">
+							<img class="social-icon" style="color: #FFF;" src="{{ url('images/social/instagram.svg') }}">
+						</a>
+					</li>
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://www.twitter.com/labcub_official" target="_blank">
+							<img class="social-icon" src="{{ url('images/social/twitter.svg') }}">
+						</a>
+					</li>
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://wa.me/message/JFPMRMHADAZ6B1" target="_blank">
+							<img class="social-icon" src="{{ url('images/social/whatsapp.svg') }}">
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="footer-nav">
@@ -70,8 +86,8 @@
 </body>
 </html>
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">
 	$('#menu-btn').on('click', function(){
 		$('#menu-items').toggle();
 	});
-</script>
+</script> --}}

@@ -19,6 +19,7 @@ class CreateBlogsTable extends Migration
             $table->integer('subcategory_id')->nullable();
             $table->string('title',100)->nullable();
             $table->string('short_description',255)->nullable();
+            $table->string('intro', 550);
             $table->text('body');
             $table->text('menu');
             $table->string('image',100)->nullable();

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Subscribe;
+use Illuminate\Support\Str;
 
 class SubscriptionController extends Controller
 {
@@ -56,9 +57,11 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
+        list($name, $domain) = explode('@', $request->email);
+
         $subscribe = new Subscribe;
         $subscribe->email = $request->email;
-        $subscribe->name = $request->name;
+        $subscribe->name = $name;
         $subscribe->status = '1';
         $subscribe->created_at = date('Y-m-d H:i:s');
         $subscribe->save();

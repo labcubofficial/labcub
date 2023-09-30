@@ -17,7 +17,7 @@ class CreateSubscribesTable extends Migration
             $table->id();
             $table->string('email',100);
             $table->string('name',100);
-            $table->enum('status',[0,1])->comment('0->Unsubscribe, 1->Subscrib');
+            $table->enum('status',[0,1])->comment('0->Unsubscribe, 1->Subscribe');
             $table->timestamps();
         });
     }

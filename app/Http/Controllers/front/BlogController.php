@@ -86,8 +86,10 @@ class BlogController extends Controller
         $blog = Blog::where('category_id', $category_id)->where('subcategory_id', $subcategory_id)->where('slug', $slug)->first();
 
         if(empty($blog)){
-            return view('front.error.404');;
+            return view('front.error.404');
         }
+
+        $blog->category_id = Category::category($blog->category_id)->category_name;
 
         $data['title'] = $blog->title;
         $data['blog'] = $blog;
