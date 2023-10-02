@@ -312,7 +312,7 @@ h1, h3, h3, h4, h5, h6{
 }
 
 .banner-left{
-    width: 60%;
+    width: 50%;
     min-height: 400;
     vertical-align: middle;
     display: grid;
@@ -327,7 +327,7 @@ h1, h3, h3, h4, h5, h6{
 }
 
 .banner-right{
-    width: 40%;
+    width: 50%;
     height: 100%;
 }
 
