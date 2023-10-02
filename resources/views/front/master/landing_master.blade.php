@@ -18,6 +18,9 @@
 		<div class="header-label">
 			<a href="{{ url('/') }}"><h1 class="header-text">Labcub</h1><a>
 		</div>
+		<div class="menu-btn" id="menu-btn">
+			<img class="menu-svg" src="{{ url('images/social/whatsapp.svg') }}">
+		</div>
 		<div class="header-nav">
 			<ul class="header-navigation">
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a></li>
@@ -35,7 +38,29 @@
 		<div class="footer-links">
 			<div class="footer-nav footer-brand">
 				<a href="{{ url('/') }}"><h1 class="header-text">Labcub</h1><a>
-				<span class="footer-desc">Empowering digital success through expert coding. Your vision, our commitment.</span>
+
+				<ul class="social-icons">
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://wa.me/message/JFPMRMHADAZ6B1" target="_blank">
+							<img class="social-icon" src="{{ url('images/social/facebook.svg') }}">
+						</a>
+					</li>
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://www.twitter.com/labcub_official" target="_blank">
+							<img class="social-icon" src="{{ url('images/social/twitter.svg') }}">
+						</a>
+					</li>
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://www.instagram.com/labcub_official" target="_blank">
+							<img class="social-icon" style="color: #FFF;" src="{{ url('images/social/instagram.svg') }}">
+						</a>
+					</li>
+					<li class="footer-nav-list">
+						<a class="footer-nav-item" href="https://wa.me/message/JFPMRMHADAZ6B1" target="_blank">
+							<img class="social-icon" src="{{ url('images/social/whatsapp.svg') }}">
+						</a>
+					</li>
+				</ul>
 			</div>
 			<div class="footer-nav">
 				{{-- <h3 class="footer-links-header">Menu</h3> --}}
@@ -52,26 +77,6 @@
 					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/privacy_policy') }}">Privacy Policy</a></li>
 					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/terms_and_condition') }}">Terms & conditions</a></li>
 					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/about_us') }}">About us</a></li>
-				</ul>
-			</div>
-			<div class="footer-nav">
-				{{-- <h3 class="footer-links-header">Social</h3> --}}
-				<ul class="social-icons">
-					<li class="footer-nav-list">
-						<a class="footer-nav-item" href="https://www.instagram.com/labcub_official" target="_blank">
-							<img class="social-icon" style="color: #FFF;" src="{{ url('images/social/instagram.svg') }}">
-						</a>
-					</li>
-					<li class="footer-nav-list">
-						<a class="footer-nav-item" href="https://www.twitter.com/labcub_official" target="_blank">
-							<img class="social-icon" src="{{ url('images/social/twitter.svg') }}">
-						</a>
-					</li>
-					<li class="footer-nav-list">
-						<a class="footer-nav-item" href="https://wa.me/message/JFPMRMHADAZ6B1" target="_blank">
-							<img class="social-icon" src="{{ url('images/social/whatsapp.svg') }}">
-						</a>
-					</li>
 				</ul>
 			</div>
 			<div class="footer-nav">

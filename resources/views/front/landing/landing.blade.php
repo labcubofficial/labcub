@@ -9,7 +9,7 @@
 			<span class="banner-header">Navigate through our comprehensive archives to uncover gems of wisdom, stay up-to-date with the latest industry trends, and experiment with cutting-edge technologies. We empower you to innovate, experiment, and create.</span>
 		</div>
 		<div class="banner-right">
-			<img class="hero-image" src="{{ url('images/landing/hero.svg') }}">
+			<img class="hero-image" src="{{ url('images/landing/landing.jpg') }}">
 		</div>
 	</section>
 	{{-- Banner End --}}
