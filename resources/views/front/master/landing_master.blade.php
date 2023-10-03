@@ -6,16 +6,6 @@
 	<!--============================== CSS Files ==============================-->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-	<!--========================= Google tag (gtag.js) =========================-->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-55HX7LRGJ7"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-55HX7LRGJ7');
-	</script>
-
 	<!--============================== CSS Files ==============================-->
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
 </head>
