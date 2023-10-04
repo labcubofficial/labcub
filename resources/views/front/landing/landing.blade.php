@@ -71,7 +71,7 @@
 			<button class="btn">4</button>
 			<button class="btn">5</button>
 			<button class="btn ml">Next ></button> --}}
-			<a class="btn mr" href="{{ url('blogs') }}">View All</a>
+			<a class="btn" href="{{ url('blogs') }}">View All</a>
 		</div>
 
 	</section>

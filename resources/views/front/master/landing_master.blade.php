@@ -62,7 +62,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="footer-nav">
+			<div class="footer-nav footer-menus">
 				{{-- <h3 class="footer-links-header">Menu</h3> --}}
 				<ul>
 					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Home</a></li>

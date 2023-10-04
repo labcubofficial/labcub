@@ -31,7 +31,7 @@ footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 0;}
 a{text-decoration: none;}
 .header-navigation {display: flex;list-style: none;color: var(--white);}
 .header-nav-item{color: var(--white);}
-.header-nav-link{color: var(--white);padding: 0 12px;text-decoration: none;cursor: pointer;}
+.header-nav-link{color: var(--white);padding: 0 12px;text-decoration: none;cursor: pointer;font-size: 16px}
 .header-nav-link:hover{color: var(--hover)}
 .header-active{color: var(--hover)}
 .header-nav-active{color: var(--white)}
@@ -47,10 +47,10 @@ a{text-decoration: none;}
     line-height: 1.25em;
     color: var(--header-text);
     text-align: center;
-    font: normal normal bold 1.875vw/2.969vw var(--font);
     letter-spacing: 0vw;
     color: #242424;
     margin-bottom: 2.24vw;
+    padding: 1em 0 1em 0;
 }
 
 .blog-cards{
@@ -154,6 +154,7 @@ a{text-decoration: none;}
 /*Blog*/
 .blogs{
     background-color: #F1F5F9;
+    padding: 1em 0 2em 0;
 }
 
 .blog-container{
@@ -271,6 +272,10 @@ h1, h3, h3, h4, h5, h6{
     padding: 1em 3em;
 }
 
+.footer-menus{
+    display: block;
+}
+
 .social-icons{
     width: 140px;
     display: flex;
@@ -341,6 +346,7 @@ h1, h3, h3, h4, h5, h6{
     max-width: 100%;
     background-color: #101439;
     text-align: center;
+    padding: 1em 0 2em 0;
 }
 
 .subscribe-image{
@@ -517,7 +523,7 @@ input:focus{
         text-align: center;
     }
     .footer-brand{
-        display: none;
+        display: block;
     }
 }
 
@@ -525,6 +531,9 @@ input:focus{
 @media (max-width: 767px) {
     header{
         padding: 0 1.5em;
+    }
+    section{
+        padding: 0;
     }
     .menu-btn{
         display: block;
@@ -545,10 +554,16 @@ input:focus{
     }
     .banner-left{
         width: 100%;
-        padding: 0 3em;
+        padding: 0 1em;
         text-align: center;
     }
     .footer-brand{
+        display: block;
+        display: grid;
+        justify-content: center;
+    }
+
+    .footer-menus{
         display: none;
     }
 
@@ -560,5 +575,9 @@ input:focus{
     }
     .about-us ol, ul{
         margin-left: 1em;
+    }
+    footer{
+        display: grid;
+        justify-content: center;
     }
 }
