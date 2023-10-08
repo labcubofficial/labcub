@@ -87,16 +87,6 @@ a{text-decoration: none;}
     height: 20px;
 }
 
-.blog-badge{
-    background-color: #F55247;
-    color: #FFFFFF;
-    font-size: 10px;
-    user-select: none;
-    height: 16px;
-    padding: 0 0.7em;
-    border-radius: 2px;
-}
-
 .blog-thumbnail{
     max-width: 100%;
     padding-top: 1.5em;
@@ -186,6 +176,10 @@ a{text-decoration: none;}
 
 .blog-content .blog-body{
     padding-top: 0.5em;
+}
+
+.blog-content .blog-body h2{
+    padding: 14px 0 1em 0;
 }
 
 .blog-content .blog-body h3{
@@ -496,7 +490,45 @@ input:focus{
     margin-left: 2em;
 }
 
-
+/*------------------------------Code Start------------------------------*/
+.code{
+    font-family: var(--font);
+    width: 100%;
+    height: auto;
+    background-color: #373737;
+    color: #FFFFFF;
+    padding: 0 0 8px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.code-header{
+    background-color: #000000;
+    border-radius: 4px 4px 0 0;
+    padding: 2px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.code-copy{
+    cursor: pointer;
+}
+.code-text{
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.code-content{
+    font-size: 14px;
+}
+.code-keyword{
+    color: #df3079;
+}
+.code-number{
+    color: #e9950c;
+}
+.code-white{
+    color: #FFFFFF;
+}
+/*-------------------------------Code End------------------------------*/
 
 /*------------------------------Tablet------------------------------*/
 @media (min-width: 768px) and (max-width: 991px) {
@@ -524,6 +556,16 @@ input:focus{
     }
     .footer-brand{
         display: block;
+    }
+    .blog-menu{
+        display: none;
+    }
+    .blog-ads{
+        display: none;
+    }
+    .blog-content{
+        width: 100%;
+        padding: 1em;
     }
 }
 
@@ -579,5 +621,15 @@ input:focus{
     footer{
         display: grid;
         justify-content: center;
+    }
+    .blog-menu{
+        display: none;
+    }
+    .blog-ads{
+        display: none;
+    }
+    .blog-content{
+        width: 100%;
+        padding: 1em;
     }
 }

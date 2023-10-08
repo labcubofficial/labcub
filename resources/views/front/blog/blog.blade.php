@@ -13,8 +13,9 @@
 			<div class="blog-content container">
 				<h1 class="blog-header">{{ $blog->title }}</h1>
 				<div class="blog-details">
-					<p class="blog-date">{{ date('d F, Y', strtotime($blog->created_at)) }}</p>
-					<p class="blog-badge">{{ $blog->category_id }}</p>
+					<p class="blog-date"><img src="{{ url('images/icon/date.svg') }}" />{{ date('d F, Y', strtotime($blog->created_at)) }}</p>
+					<p><img src="{{ url('images/icon/like.svg') }}" />1</p>
+					<p><img src="{{ url('images/icon/view.svg') }}" />{{ $blog->view_count }}</p>
 				</div>
 
 				<p class="blog-intro">{{ $blog->intro }}</p>
@@ -23,6 +24,23 @@
 					<img class="blog-thumbnail" src="{{ url('media/blog/'.$blog->image) }}">
 				</div>
 				<div class="blog-body">{!! $blog->body !!}</div>
+				<div class="code">
+					<div class="code-header">
+						<div>
+							<p class="code-text">Php</p>
+						</div>
+						<div class="code-copy">
+							<img src="{{ url('images/icon/copy.svg') }}">
+						</div>
+					</div>
+					<div class="code-content">
+						<code>
+							<span class="code-keyword">function()<span><span class="code-white">{</span><br>
+								<span class="code-keyword">return</span> <span class="code-number">0</span><span class="code-white">;</span><br>
+							<span class="code-white">}</span>
+						</code>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="blog-ads">
