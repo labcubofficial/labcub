@@ -16,7 +16,30 @@ header {max-width: 100%;height: 70px;background: var(--primary);box-shadow: 0 2p
 display: flex;align-items: center;justify-content: space-between;padding: 0 3em;}
 footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 3em;}
 
-.btn{display: inline-block;font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid transparent;padding: 0.375rem 0.75rem;font-size: 1rem;line-height: 1.5;border-radius: 0.25rem;cursor: pointer;text-decoration: none;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;}
+.sidebar-icon{
+	width: 28px;
+	height: 28px;
+	fill: var(--white);
+}
+
+.sidebar-icon:hover, .sidebar-active{
+	fill: var(--secondary);
+}
+
+.btn{
+	padding: 8px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    font-family: var(--font);
+    border: none;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,.16);
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.80rem;
+}
 .btn-primary{color: #fff;background-color: #007bff;border-color: #007bff;}
 .btn-primary:hover{color: #fff;background-color: #0069d9;border-color: #0062cc;}
 .btn-secondary{color: #fff;background-color: #6c757d;border-color: #6c757d;}
@@ -64,24 +87,28 @@ footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 3em
 .tox-statusbar{display: none !important;}
 
 .form-control{
-	display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	padding: 0.5rem 0.75rem;
+    font-family: var(--font);
+    border-radius: 0.375rem;
+    line-height: 1.25rem;
+    font-size: .875rem;
+    border: 1px solid rgb(209 213 219 / 1);
+    appearance: none;
+    background-color: #FFFFFF;
+    outline: none;
+    min-width: 300px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar{
 	background-color: var(--primary);
 	color: #FFF;
 	padding: 1em;
-	min-width: 100px;
+	min-width: auto;
+}
+
+.sidebar-nav-item{
+	padding: 4px 8px;
 }
 
 nav{
@@ -92,10 +119,6 @@ nav{
 	color: #FFF;
 	text-decoration: none;
 	cursor: pointer;
-}
-
-.sidebar-nav-link:hover, .sidebar-active{
-	color: var(--secondary);
 }
 
 .footer-copyright{

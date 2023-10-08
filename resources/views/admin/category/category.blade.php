@@ -1,4 +1,4 @@
-@extends('admin.master.dashboard_master')
+@extends('admin.master.admin_master')
 <script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 @section('content')
@@ -34,6 +34,8 @@
 				<span id="close" class="btn btn-danger close">&times;</span>
 			</div>
 			{!! Form::open(['id'=>'form-submit', 'class' => '', 'files' => 'true']) !!}
+					<input type="hidden" name="category_id" value="0" id="category_id">
+					<input type="hidden" name="old_image" value="" id="old_image">
 				<div>
 		    		{!! Form::label('category_name', 'Category Name') !!}<br>
 	    			{!! Form::text('category_name',null,['class' => 'form-control']) !!}
@@ -77,6 +79,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#add-category').on('click',function() {
+			$('#category_id').val(0);
 			$('#category-modal').toggle();
 		});
 		$('#close').on('click',function() {
@@ -152,6 +155,8 @@
     					$('#status').val(0);
     				}
     				$('#submit').val('Update');
+    				$('#category_id').val(response.id);
+    				$('#old_image').val(response.image);
     				$('#loading').hide();
     				$('#category-modal').show();
     			},

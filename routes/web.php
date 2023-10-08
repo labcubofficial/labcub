@@ -33,10 +33,5 @@ Route::resource('admin/login','admin\AdminLoginController');
         Route::resource('subcategory','admin\SubCategoryController');
         Route::resource('blog','admin\BlogController');
         Route::resource('subscription','admin\SubscriptionController');
-        
-        Route::prefix('settings')->group(function(){
-            Route::resource('blog','admin\BlogController');
-        });
-        
     });
 // });

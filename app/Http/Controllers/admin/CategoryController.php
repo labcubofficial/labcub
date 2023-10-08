@@ -70,13 +70,29 @@ class CategoryController extends Controller
         
         $status = isset($request->status)?'1':'0';
 
-        Category::insert([
-            'parent_id' => 0,
-            'category_name' => $request->category_name,
-            'image' => $filename,
-            'status' => $status,
-            'created_at' => date('Y-m-d H:i:s'),
-        ]);
+        if($request->category_id == 0){
+            // Adding new category
+            Category::insert([
+                'parent_id' => 0,
+                'category_name' => $request->category_name,
+                'image' => $filename,
+                'status' => $status,
+                'created_at' => date('Y-m-d H:i:s'),
+            ]);
+        }else{
+            // Updating exisitng data
+            $category = Category::find($request->category_id);
+            $category->category_name = $request->category_name;
+            $category->image = isset($filename)?$filename:$request->old_image;
+            $category->status = $status;
+            $category->updated_at = date('Y-m-d H:i:s');
+            $category->save();
+
+            if(isset($filename)){
+                $imagePath = 'media/category/'.$request->old_image;
+                File::delete($imagePath);
+            }
+        }
 
         return redirect()->route('category.index');
     }

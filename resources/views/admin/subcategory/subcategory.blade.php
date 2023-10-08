@@ -1,4 +1,4 @@
-@extends('admin.master.dashboard_master')
+@extends('admin.master.admin_master')
 <script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 @section('content')
