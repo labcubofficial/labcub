@@ -24,7 +24,7 @@ Route::get('legal/about_us', function(){ return view('front.legal.about_us'); })
 Route::get('send/mail', 'Mail\MailController@sendMail');
 
 Route::resource('admin/login','admin\AdminLoginController');
-// Route::middleware(['auth'])->group(function () {
+// Route::middleware(['adminlogin'])->group(function () {
     Route::prefix('admin')->group(function(){
         Route::get('logout','admin\AdminLoginController@Logout');
 
