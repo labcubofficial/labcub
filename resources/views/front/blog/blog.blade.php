@@ -24,16 +24,6 @@
 					<img class="blog-thumbnail" src="{{ url('media/blog/'.$blog->image) }}">
 				</div>
 				<div class="blog-body">{!! $blog->body !!}</div>
-				<div class="code">
-					<div class="code-header">
-						<div>
-							<p class="code-text">Php</p>
-						</div>
-						<div class="code-copy">
-							<img src="{{ url('images/icon/copy.svg') }}">
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="blog-ads">
