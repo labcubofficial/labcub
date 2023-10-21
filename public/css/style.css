@@ -490,46 +490,6 @@ input:focus{
     margin-left: 2em;
 }
 
-/*------------------------------Code Start------------------------------*/
-.code{
-    font-family: var(--font);
-    width: 100%;
-    height: auto;
-    background-color: #373737;
-    color: #FFFFFF;
-    padding: 0 0 8px 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-.code-header{
-    background-color: #000000;
-    border-radius: 4px 4px 0 0;
-    padding: 2px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.code-copy{
-    cursor: pointer;
-}
-.code-text{
-    color: #FFFFFF;
-    font-size: 14px;
-}
-.code-content{
-    font-size: 14px;
-}
-.code-keyword{
-    color: #df3079;
-}
-.code-number{
-    color: #e9950c;
-}
-.code-white{
-    color: #FFFFFF;
-}
-/*-------------------------------Code End------------------------------*/
-
 /*------------------------------Tablet------------------------------*/
 @media (min-width: 768px) and (max-width: 991px) {
     header{

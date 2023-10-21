@@ -33,13 +33,6 @@
 							<img src="{{ url('images/icon/copy.svg') }}">
 						</div>
 					</div>
-					<div class="code-content">
-						<code>
-							<span class="code-keyword">function()<span><span class="code-white">{</span><br>
-								<span class="code-keyword">return</span> <span class="code-number">0</span><span class="code-white">;</span><br>
-							<span class="code-white">}</span>
-						</code>
-					</div>
 				</div>
 			</div>
 		</div>
