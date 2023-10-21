@@ -12,8 +12,8 @@
 				<span>Badge</span>
 			</div>
 			<div class="d-flex">
-				<a href="javascript:void(0)" class="btn btn-primary">Edit</a>
-				<a href="javascript:void(0)" class="btn btn-danger">Delete</a>
+				<a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-primary">Edit</a>
+				<a href="{{ url('admin/blog/delete/'.$blog->id.'') }}" class="btn btn-danger">Delete</a>
 				<a href="javascript:void(0)" class="btn btn-info">View</a>
 			</div>
 		</div>

@@ -30,10 +30,12 @@ class BlogController extends Controller
      */
     public function create()
     {
+        $data = array();
+        
         $data['parent_category'] = Category::where('status','1')->where('parent_id','0')->pluck('category_name', 'id');
         $data['sub_category'] = Category::where('status','1')->where('parent_id','<>','0')->pluck('category_name', 'id');
 
-        return view('admin.blog.blog_edit', $data);
+        return view('admin.blog.blog_create', $data);
     }
 
     /**
@@ -44,15 +46,25 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        if(isset($request->image)){
+            $filename = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('media/blog'), $filename);
+        }else{
+            $filename = null;
+        }
+
         Blog::insert([
             'title' => $request->title,
             'short_description' => $request->description,
+            'intro' => $request->intro,
             'menu' => $request->menu,
             'body' => $request->body,
             'slug' => $request->slug,
+            'is_recommended' => $request->is_recommended,
             'category_id' => $request->parent_category,
             'subcategory_id' => $request->sub_category,
-            'image' => null,
+            'image' => $filename,
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         return Redirect()->intended('admin/blog');
@@ -77,7 +89,12 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = array();
+
+        $data['parent_category'] = Category::where('status','1')->where('parent_id','0')->pluck('category_name', 'id');
+        $data['sub_category'] = Category::where('status','1')->where('parent_id','<>','0')->pluck('category_name', 'id');
+
+        return view('admin.blog.blog_edit', $data);
     }
 
     /**
@@ -100,6 +117,15 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::findorFail($id);
+        
+        if(isset($blog->image)){
+            $imagePath = 'media/blog/'.$blog->image;
+            File::delete($imagePath);
+        }
+
+        $blog->delete();
+
+        return Redirect()->intended('admin/blog');
     }
 }

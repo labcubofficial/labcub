@@ -32,6 +32,7 @@ Route::resource('admin/login','admin\AdminLoginController');
         Route::resource('category','admin\CategoryController');
         Route::resource('subcategory','admin\SubCategoryController');
         Route::resource('blog','admin\BlogController');
+        Route::get('blog/delete/{id}', 'admin\BlogController@destroy');
         Route::resource('subscription','admin\SubscriptionController');
     });
 // });
