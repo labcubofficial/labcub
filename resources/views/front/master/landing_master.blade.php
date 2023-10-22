@@ -51,7 +51,7 @@
 						</a>
 					</li>
 					<li class="footer-nav-list">
-						<a class="footer-nav-item" href="https://www.instagram.com/labcub_official" target="_blank">
+						<a class="footer-nav-item" href="https://www.instagram.com/labcub_lc" target="_blank">
 							<img class="social-icon" style="color: #FFF;" src="{{ url('images/social/instagram.svg') }}">
 						</a>
 					</li>
