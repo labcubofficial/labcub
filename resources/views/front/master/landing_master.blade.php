@@ -65,10 +65,10 @@
 			<div class="footer-nav footer-menus">
 				{{-- <h3 class="footer-links-header">Menu</h3> --}}
 				<ul>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Home</a></li>
+					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('/') }}">Home</a></li>
 					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Service</a></li>
 					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Documention</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Blog</a></li>
+					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('blogs') }}">Blog</a></li>
 				</ul>
 			</div>
 			<div class="footer-nav">

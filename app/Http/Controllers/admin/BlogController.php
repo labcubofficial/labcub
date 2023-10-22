@@ -91,6 +91,8 @@ class BlogController extends Controller
     {
         $data = array();
 
+        $data['blog'] = Blog::find($id);
+
         $data['parent_category'] = Category::where('status','1')->where('parent_id','0')->pluck('category_name', 'id');
         $data['sub_category'] = Category::where('status','1')->where('parent_id','<>','0')->pluck('category_name', 'id');
 
@@ -106,7 +108,34 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $blog = Blog::findOrFail($id);
+
+        if(isset($request->image)){
+            if(isset($blog->image)){
+                $imagePath = 'media/blog/'.$blog->image;
+                File::delete($imagePath);
+            }
+
+            $filename = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('media/blog'), $filename);
+        }else{
+            $filename = $blog->image;
+        }
+
+        $blog->title = $request->title;
+        $blog->short_description = $request->description;
+        $blog->intro = $request->intro;
+        $blog->menu = $request->menu;
+        $blog->body = $request->body;
+        $blog->slug = $request->slug;
+        $blog->is_recommended = $request->is_recommended;
+        $blog->category_id = $request->parent_category;
+        $blog->subcategory_id = $request->sub_category;
+        $blog->image = $filename;
+        $blog->updated_at = date('Y-m-d H:i:s');
+        $blog->save();
+
+        return Redirect()->intended('admin/blog');
     }
 
     /**
