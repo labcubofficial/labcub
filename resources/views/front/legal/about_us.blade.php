@@ -5,11 +5,11 @@
 		<div class="content">
 			{{-- <h2>Your Gateway to Simplified Programming and Technical Mastery</h2> --}}
 
-			<p>Welcome to <a href="https://www.labcub.com"><b>Labcub</b></a>, your ultimate destination for all things programming and technical knowledge. We are dedicated to empowering developers and aspiring tech enthusiasts with a treasure trove of services, products, blogs, and documents that make the world of programming and technology more accessible than ever before.</p>
+			<p>Welcome to <a href="{{ url('') }}"><b>Labcub</b></a>, your ultimate destination for all things programming and technical knowledge. We are dedicated to empowering developers and aspiring tech enthusiasts with a treasure trove of services, products, blogs, and documents that make the world of programming and technology more accessible than ever before.</p>
 
 			<h2>Who We Are:</h2>
 
-			<p>At <a href="https://www.labcub.com"><b>Labcub</b></a>, we are a team of passionate developers, tech enthusiasts, and educators who share a common mission: to demystify the complexities of programming and technical concepts. We believe that everyone should have the opportunity to learn and excel in the world of technology, regardless of their background or experience level.</p>
+			<p>At <a href="{{ url('') }}"><b>Labcub</b></a>, we are a team of passionate developers, tech enthusiasts, and educators who share a common mission: to demystify the complexities of programming and technical concepts. We believe that everyone should have the opportunity to learn and excel in the world of technology, regardless of their background or experience level.</p>
 
 			<h2>What We Offer:</h2>
 
@@ -37,9 +37,9 @@
 
 			<h2>Join Us in Your Tech Journey:</h2>
 
-			<p>Whether you're an aspiring developer, a seasoned pro, or simply curious about the world of programming and technology, <a href="https://www.labcub.com"><b>Labcub</b></a> is your trusted companion on your journey to technical mastery. Together, we will simplify the complex, unravel the mysteries of code, and empower you to create, innovate, and excel in the digital age.</p>
+			<p>Whether you're an aspiring developer, a seasoned pro, or simply curious about the world of programming and technology, <a href="{{ url('') }}"><b>Labcub</b></a> is your trusted companion on your journey to technical mastery. Together, we will simplify the complex, unravel the mysteries of code, and empower you to create, innovate, and excel in the digital age.</p>
 			<br>
-			<p>Thank you for choosing <a href="https://www.labcub.com"><b>Labcub</b></a> as your trusted source for all your programming and technical needs. Let's embark on this exciting journey together and turn your programming dreams into reality!</p>
+			<p>Thank you for choosing <a href="{{ url('') }}"><b>Labcub</b></a> as your trusted source for all your programming and technical needs. Let's embark on this exciting journey together and turn your programming dreams into reality!</p>
 		</div>
 	</div>
 @endsection
