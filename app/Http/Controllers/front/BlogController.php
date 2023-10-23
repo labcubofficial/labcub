@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Category;
 use App\Models\Blog;
+use App\Models\BlogInteraction;
 
 class BlogController extends Controller
 {
@@ -73,7 +74,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($category, $sub_category, $slug)
+    public function show(Request $request, $category, $sub_category, $slug)
     {
         $data = array();
 
@@ -96,6 +97,11 @@ class BlogController extends Controller
 
         $menu = explode(',', $blog->menu);
         $data['menu'] = $menu;
+
+        $blog_interactions = BlogInteraction::where('blog_id' ,$blog->id)->first();
+        $blog_interactions->increment('views');
+
+        $data['blog_views'] = $blog_interactions->views;
 
         return view('front.blog.blog', $data);
     }

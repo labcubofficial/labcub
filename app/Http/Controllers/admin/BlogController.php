@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Blog;
+use App\Models\BlogInteraction;
 use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
@@ -54,18 +55,25 @@ class BlogController extends Controller
             $filename = null;
         }
 
-        Blog::insert([
-            'title' => $request->title,
-            'short_description' => $request->description,
-            'intro' => $request->intro,
-            'menu' => $request->menu,
-            'body' => $request->body,
-            'slug' => $request->slug,
-            'is_recommended' => $request->is_recommended,
-            'category_id' => $request->parent_category,
-            'subcategory_id' => $request->sub_category,
-            'image' => $filename,
-            'created_at' => date('Y-m-d H:i:s'),
+        $blog = new Blog;
+        $blog->title = $request->title;
+        $blog->short_description = $request->description;
+        $blog->intro = $request->intro;
+        $blog->menu = $request->menu;
+        $blog->body = $request->body;
+        $blog->slug = $request->slug;
+        $blog->is_recommended = $request->is_recommended;
+        $blog->category_id = $request->parent_category;
+        $blog->subcategory_id = $request->sub_category;
+        $blog->image = $filename;
+        $blog->created_at = date('Y-m-d H:i:s');
+        $blog->save();
+
+        BlogInteraction::insert([
+            'blog_id' => $blog->id,
+            'views' => 0,
+            'likes' => 0,
+            'earnings' => 0,
         ]);
 
         return Redirect()->intended('admin/blog');

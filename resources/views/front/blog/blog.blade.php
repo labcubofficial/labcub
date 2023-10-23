@@ -13,9 +13,9 @@
 			<div class="blog-content container">
 				<h1 class="blog-header">{{ $blog->title }}</h1>
 				<div class="blog-details">
-					<p class="blog-date"><img src="{{ url('images/icon/date.svg') }}" />{{ date('d F, Y', strtotime($blog->created_at)) }}</p>
-					<p><img src="{{ url('images/icon/like.svg') }}" />1</p>
-					<p><img src="{{ url('images/icon/view.svg') }}" />{{ $blog->view_count }}</p>
+					<p class="blog-date">Labcub ︱  {{ $blog_views }} Views ︱ Published on : {{ date('d M Y', strtotime($blog->created_at)) }}</p>
+					
+					<p>{{ $blog->view_count }}</p>
 				</div>
 
 				<p class="blog-intro">{{ $blog->intro }}</p>
