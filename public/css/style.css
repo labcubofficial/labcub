@@ -150,6 +150,7 @@ a{text-decoration: none;}
 .blog-container{
     max-width: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
 .blog-menu {
@@ -169,7 +170,7 @@ a{text-decoration: none;}
 }
 
 .blog-content {
-    width: 70%;
+    max-width: 680px;
     min-height: 400px;
     padding: 2em;
 }
@@ -516,6 +517,9 @@ input:focus{
     }
     .footer-brand{
         display: block;
+    }
+    .blog-container{
+        justify-content: center;
     }
     .blog-menu{
         display: none;
