@@ -640,6 +640,12 @@ pre::-webkit-scrollbar-thumb:hover {background-color: #A9A9A9;}
     }
     .blog-content{
         width: 100%;
-        padding: 1em;
+        padding: 0;
+    }
+    .blog-container{
+        padding: 3em 1.5em;
+    }
+    .footer-brand{
+        width: auto;
     }
 }
