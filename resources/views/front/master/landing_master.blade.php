@@ -89,10 +89,11 @@
 		</div>
 	</footer>
 </body>
+<script src="{{ asset('js/code_viewer.js') }}"></script>
 </html>
 
-{{-- <script type="text/javascript">
+<!-- <script type="text/javascript">
 	$('#menu-btn').on('click', function(){
 		$('#menu-items').toggle();
 	});
-</script> --}}
+</script> -->
