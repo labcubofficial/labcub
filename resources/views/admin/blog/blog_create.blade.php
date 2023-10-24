@@ -4,15 +4,15 @@
 @section('content')
 	{!! Form::open(['method'=>'POST','route'=>'blog.store','id'=>'form-submit', 'class' => '', 'files' => 'true']) !!}
 
-		{!! Form::text('title',null,['class' => 'form-control', 'placeholder' => 'Title']) !!}
+		{!! Form::text('title',null,['class' => 'form-control', 'placeholder' => 'Title', 'maxlength' => 100]) !!}
 
-		{!! Form::textarea('description',null,['class' => 'form-control', 'placeholder' => 'Description']) !!}
+		{!! Form::textarea('description',null,['class' => 'form-control', 'placeholder' => 'Description', 'maxlength' => 250]) !!}
 
-		{!! Form::textarea('intro',null,['class' => 'form-control', 'placeholder' => 'Blog intro']) !!}
+		{!! Form::textarea('intro',null,['class' => 'form-control', 'placeholder' => 'Blog intro', 'maxlength' => 550]) !!}
 
 		{!! Form::text('menu',null,['class' => 'form-control', 'placeholder' => 'Menu']) !!}
 
-		{!! Form::text('slug',null,['class' => 'form-control', 'placeholder' => 'Slug']) !!}
+		{!! Form::text('slug',null,['class' => 'form-control', 'placeholder' => 'Slug', 'maxlength' => 255]) !!}
 
 		<div class="form-column">
 			<div class="form-col-two">
