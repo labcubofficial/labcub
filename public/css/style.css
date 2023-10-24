@@ -597,6 +597,9 @@ pre::-webkit-scrollbar-thumb:hover {background-color: #A9A9A9;}
     .category-grid{
         justify-content: center;
     }
+    .category{
+        padding: 0 0 3em 0;
+    }
     .header-nav{
         display: none;
     }
@@ -605,7 +608,7 @@ pre::-webkit-scrollbar-thumb:hover {background-color: #A9A9A9;}
     }
     .banner-left{
         width: 100%;
-        padding: 0 1em;
+        padding: 3em 3em;
         text-align: center;
     }
     .footer-brand{
@@ -613,7 +616,12 @@ pre::-webkit-scrollbar-thumb:hover {background-color: #A9A9A9;}
         display: grid;
         justify-content: center;
     }
-
+    .blogs{
+        padding: 2em 0 6em 0;
+    }
+    .subscribe{
+        padding: 3em 2em 4em 2em;
+    }
     .footer-menus{
         display: none;
     }
