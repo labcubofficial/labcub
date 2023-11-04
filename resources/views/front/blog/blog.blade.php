@@ -5,7 +5,7 @@
 		<div class="blog-menu">
 			<nav>
 				@foreach($menu as $item)
-					<li><a href="#laravel-routes">{{ $item }}</a></li>
+					<li><a class="menu-item" href="#{{ $item }}">{{ $item }}</a></li>
 				@endforeach
 			</nav>
 		</div>

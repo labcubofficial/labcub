@@ -141,6 +141,14 @@ a{text-decoration: none;}
     color: #000;
 }
 
+.menu-item{
+    color: #0000FF;
+}
+
+.menu-item.active{
+    color: #FF0000;
+}
+
 /*Blog*/
 .blogs{
     background-color: #F1F5F9;

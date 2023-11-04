@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 	<!--============================== CSS Files ==============================-->
+	<script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
 </head>
 <body>
@@ -86,8 +87,10 @@
 			<span class="footer-copyright-text">© {{ date('Y') }} Labcub Inc. All Rights Reserved.</span>
 		</div>
 	</footer>
+	
+	<script src="{{ asset('js/script.js') }}"></script>
+	<script src="{{ asset('js/code_viewer.js') }}"></script>
 </body>
-<script src="{{ asset('js/code_viewer.js') }}"></script>
 </html>
 
 <!-- <script type="text/javascript">
