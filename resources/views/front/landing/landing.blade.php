@@ -8,9 +8,9 @@
 			<h1>Where Code Comes to Life: Ignite Your Passion for Programming</h1>
 			<span class="banner-header">Navigate through our comprehensive archives to uncover gems of wisdom, stay up-to-date with the latest industry trends, and experiment with cutting-edge technologies. We empower you to innovate, experiment, and create.</span>
 		</div>
-		<!-- <div class="banner-right">
+		<div class="banner-right">
 			<img class="hero-image" src="{{ url('images/landing/landing.jpg') }}">
-		</div> -->
+		</div>
 	</section>
 	{{-- Banner End --}}
 
