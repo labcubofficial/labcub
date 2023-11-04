@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    // blog reader menu color change
     $(window).on('scroll', function() {
         var scrollPos = $(document).scrollTop();
 
@@ -10,5 +12,21 @@ $(document).ready(function() {
                 $('a[href="#' + refElement + '"]').addClass("active");
             }
         });
+    });
+
+    // header sticky when scroll up
+    let lastScrollTop = 0;
+    const header = $('header');
+    let headerHeight = header.outerHeight();
+
+    $(window).on('scroll', function() {
+        let currentScroll = $(this).scrollTop();
+
+        if (currentScroll > lastScrollTop) {
+            header.removeClass('header-sticky');
+        } else {
+            header.addClass('header-sticky');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 });
