@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<div class="footer-copyright">
-			<span class="footer-copyright-text">© {{ date('Y') }} Labcub Inc. All Rights Reserved.</span>
+			<span class="footer-copyright-text">© {{ date('Y') }} Labcub Company. All Rights Reserved.</span>
 		</div>
 	</footer>
 	
