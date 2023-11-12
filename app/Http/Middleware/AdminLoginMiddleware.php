@@ -17,10 +17,10 @@ class AdminLoginMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect('admin/login');
+        if(Auth::check()){
+            return $next($request);
         }
 
-        return $next($request);
+        return redirect('admin/login');
     }
 }
