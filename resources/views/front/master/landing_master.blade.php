@@ -11,7 +11,7 @@
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
 </head>
 <body>
-	<header class="header-sticky">
+	<header>
 		<div class="menu-btn" id="menu-btn">
 			<img class="menu-svg" src="{{ url('images/social/menu.svg') }}">
 			<div class="menu-items" id="menu-items"></div>
