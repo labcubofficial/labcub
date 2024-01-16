@@ -18,7 +18,8 @@
     --black: #000000;
 
     /* hover */
-    --primary-hover: #FFD700;
+    --primary-hover: #004949;
+    --nav-hover: #FFD700;
     --secondary-hover: #2980b9;
     --error-hover: #2980b9;
     --success-hover: #2980b9;
@@ -119,8 +120,8 @@ a{text-decoration: none;}
 .header-navigation {display: flex;list-style: none;color: var(--white);}
 .header-nav-item{color: var(--white);}
 .header-nav-link{color: var(--white);padding: 0 12px;text-decoration: none;cursor: pointer;font-size: 16px}
-.header-nav-link:hover{color: var(--primary-hover)}
-.header-active{color: var(--primary-hover)}
+.header-nav-link:hover{color: var(--nav-hover)}
+.header-active{color: var(--nav-hover)}
 .header-nav-active{color: var(--white)}
 .header-text {color: var(--white)}
 
@@ -674,8 +675,14 @@ pre::-webkit-scrollbar-thumb:hover {background-color: #A9A9A9;}
     }
     .banner-left{
         width: 100%;
-        padding: 3em 3em;
+        padding: 0;
         text-align: center;
+    }
+    .banner{
+        padding: 3.5rem 2rem;
+    }
+    .banner-left h1{
+        font-size: 2rem;
     }
     .footer-brand{
         display: block;
