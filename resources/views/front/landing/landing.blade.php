@@ -19,17 +19,17 @@
 		<div class="overview-container">
 			<img class="overview-icon" src="{{ asset('images/icon/code.svg') }}" alt="icon">
 			<h4>Elevate Your Code</h4>
-			<sapn>Unleash your programming potential with our insightful blog. Elevate your coding skills, stay updated on the latest trends, and join a community passionate about the art of programming.</span>
+			<span>Unleash your programming potential with our insightful blog. Elevate your coding skills, stay updated on the latest trends, and join a community passionate about the art of programming.</span>
 		</div>
 		<div class="overview-container">
 			<img class="overview-icon" src="{{ asset('images/icon/hub.svg') }}" alt="icon">
 			<h4>Code Craftsmanship Unleashed</h4>
-			<sapn>Welcome to a space where coding is an art form. Dive into our blog for expert tutorials, coding wisdom, and a community that celebrates the craftsmanship of programming.</span>
+			<span>Welcome to a space where coding is an art form. Dive into our blog for expert tutorials, coding wisdom, and a community that celebrates the craftsmanship of programming.</span>
 		</div>
 		<div class="overview-container">
 			<img class="overview-icon" src="{{ asset('images/icon/trend.svg') }}" alt="icon">
 			<h4>Discover, Code, Connect</h4>
-			<sapn>Explore the world of programming through our blog. Discover new techniques, code with confidence, and connect with a community of developers dedicated to mutual growth and success.</span>
+			<span>Explore the world of programming through our blog. Discover new techniques, code with confidence, and connect with a community of developers dedicated to mutual growth and success.</span>
 		</div>
 	</section>
 	{{-- Overview End --}}

@@ -146,6 +146,7 @@ a{text-decoration: none;}
 }
 .overview-container span{
     color: var(--text);
+    line-height: 22px;
 }
 /*------------------------------ overview ------------------------------*/
 
@@ -542,13 +543,23 @@ input:focus{
 }
 
 .menu-items{
-    width: 300px;
+    width: 70%;
     height: 300px;
     background-color: var(--primary);
     position: absolute;
     left: 0;
-    top: 60px;
+    top: 65px;
     display: none;
+    text-align: center;
+}
+.menu-items ul{
+    list-style: none;
+    margin-top: 3em;
+}
+
+.menu-items ul li{
+    color: var(--white);
+    margin: .2em 0 .2em 0;
 }
 
 /*Loading Start*/

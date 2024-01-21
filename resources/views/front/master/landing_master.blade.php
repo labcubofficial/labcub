@@ -14,7 +14,15 @@
 	<header>
 		<div class="menu-btn" id="menu-btn">
 			<img class="menu-svg" src="{{ url('images/social/menu.svg') }}">
-			<div class="menu-items" id="menu-items"></div>
+			<div class="menu-items" id="menu-items">
+				<ul>
+					<li>Home</li>
+					<li>Service</li>
+					<li>Documention</li>
+					<li>Blog</li>
+					<li>About Us</li>
+				</ul>
+			</div>
 		</div>
 		<div class="header-label">
 			<a href="{{ url('/') }}"><h1 class="header-text">Labcub</h1></a>
@@ -93,8 +101,8 @@
 </body>
 </html>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$('#menu-btn').on('click', function(){
 		$('#menu-items').toggle();
 	});
-</script> -->
+</script>
