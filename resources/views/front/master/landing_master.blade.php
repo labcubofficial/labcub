@@ -20,16 +20,16 @@
 						<a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a>
 					</li>
 					<li class="header-nav-item">
-						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Service</a>	
-					</li>
-					<li class="header-nav-item">
-						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Documention</a>
+						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Tools</a>	
 					</li>
 					<li class="header-nav-item">
 						<a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blog</a>
 					</li>
 					<li class="header-nav-item">
 						<a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About Us</a>
+					</li>
+					<li class="header-nav-item">
+						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Contact Us</a>
 					</li>
 				</ul>
 			</div>
@@ -45,10 +45,10 @@
 		<div class="header-nav">
 			<ul class="header-navigation">
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a></li>
-				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Service</a></li>
-				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Documention</a></li>
+				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blogs</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About us</a></li>
+				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Contact Us</a></li>
 			</ul>
 		</div>
 	</header>
@@ -86,18 +86,18 @@
 			<div class="footer-nav footer-menus">
 				{{-- <h3 class="footer-links-header">Menu</h3> --}}
 				<ul>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('/') }}">Home</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Service</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="#">Documention</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('blogs') }}">Blogs</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blogs</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="footer-nav">
 				{{-- <h3 class="footer-links-header">Legal</h3> --}}
 				<ul>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/privacy_policy') }}">Privacy Policy</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/terms_and_condition') }}">Terms & conditions</a></li>
-					<li class="footer-nav-list"><a class="footer-nav-item" href="{{ url('legal/about_us') }}">About us</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('legal/privacy_policy') ? ' header-active' : '' }}" href="{{ url('legal/privacy_policy') }}">Privacy Policy</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('legal/terms_and_condition') ? ' header-active' : '' }}" href="{{ url('legal/terms_and_condition') }}">Terms & conditions</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About us</a></li>
 				</ul>
 			</div>
 		</div>
