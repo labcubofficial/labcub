@@ -13,14 +13,24 @@
 <body>
 	<header>
 		<div class="menu-btn" id="menu-btn">
-			<img class="menu-svg" src="{{ url('images/social/menu.svg') }}">
+			<img class="menu-svg" id="menu-svg" src="{{ url('images/icon/menu.svg') }}">
 			<div class="menu-items" id="menu-items">
 				<ul>
-					<li>Home</li>
-					<li>Service</li>
-					<li>Documention</li>
-					<li>Blog</li>
-					<li>About Us</li>
+					<li class="header-nav-item">
+						<a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a>
+					</li>
+					<li class="header-nav-item">
+						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Service</a>	
+					</li>
+					<li class="header-nav-item">
+						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Documention</a>
+					</li>
+					<li class="header-nav-item">
+						<a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blog</a>
+					</li>
+					<li class="header-nav-item">
+						<a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About Us</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -98,11 +108,17 @@
 	
 	<script src="{{ asset('js/script.js') }}"></script>
 	<script src="{{ asset('js/code_viewer.js') }}"></script>
+	
+	<script type="text/javascript">
+		$('#menu-btn').on('click', function(){
+			$('#menu-items').toggle();
+
+			if($('#menu-items').css('display') == 'none'){
+				$('#menu-svg').attr('src', 'images/icon/menu.svg');
+			}else{
+				$('#menu-svg').attr('src', 'images/icon/close.svg');
+			}
+		});
+	</script>
 </body>
 </html>
-
-<script type="text/javascript">
-	$('#menu-btn').on('click', function(){
-		$('#menu-items').toggle();
-	});
-</script>

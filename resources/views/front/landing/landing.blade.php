@@ -86,18 +86,6 @@
 	</section>
 	{{-- Blog Start --}}
 
-	{{-- Subscribe Start --}}
-	<section class="subscribe">
-		<img src="{{ url('images/newsletter.svg') }}" class="subscribe-image" alt="news-feed"/>
-		<h1>Subscribe to our newsletter</h1>
-		<div class="subscribe-desc">
-			<p>Be the first to get exclusive offers and the latest news on our product directry in your inbox.</p>
-		</div>
-		<input type="email" name="email" id="email" placeholder="Email"><br>
-		<button class="btn btn-subscribe" id="btn-subscribe">Subscribe</button>
-	</section>
-	{{-- Subscribe Start --}}
-
 @endsection
 
 <script type="text/javascript">
