@@ -7,6 +7,10 @@
 	<link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 	<!--============================== CSS Files ==============================-->
+	<!--============================== Adsense ==============================-->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4764751757078002"
+     crossorigin="anonymous"></script>
+	 <!--============================== Adsense ==============================-->
 	<script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
 </head>
@@ -20,7 +24,7 @@
 						<a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a>
 					</li>
 					<li class="header-nav-item">
-						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Tools</a>	
+						<!-- <a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="{{ url('/') }}">Tools</a>	 -->
 					</li>
 					<li class="header-nav-item">
 						<a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blog</a>
@@ -45,7 +49,7 @@
 		<div class="header-nav">
 			<ul class="header-navigation">
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a></li>
-				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li>
+				<!-- <li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li> -->
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blogs</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About us</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Contact Us</a></li>
@@ -87,7 +91,7 @@
 				{{-- <h3 class="footer-links-header">Menu</h3> --}}
 				<ul>
 					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a></li>
-					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li>
+					<!-- <li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li> -->
 					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blogs</a></li>
 					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Contact Us</a></li>
 				</ul>
