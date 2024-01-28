@@ -42,7 +42,7 @@
 			<a href="{{ url('/') }}"><h1 class="header-text">Labcub</h1></a>
 		</div>
 		<div class="menu-btn" id="menu-btn">
-			<a target="_blank" href="https://wa.me/message/JFPMRMHADAZ6B1">
+			<a target="_blank" href="https://api.whatsapp.com/send/?phone=8680808190&text=urlencodedtext&type=phone_number&app_absent=0">
 				<img class="menu-svg" src="{{ url('images/social/whatsapp.svg') }}">
 			</a>
 		</div>
@@ -76,12 +76,12 @@
 						</a>
 					</li>
 					<li class="footer-nav-list">
-						<a class="footer-nav-item" href="https://www.instagram.com/labcub_lc" target="_blank">
+						<a class="footer-nav-item" href="https://www.instagram.com/labcub.in/" target="_blank">
 							<img class="social-icon" style="color: #FFF;" src="{{ url('images/social/instagram.svg') }}">
 						</a>
 					</li>
 					<li class="footer-nav-list">
-						<a class="footer-nav-item" href="https://wa.me/message/JFPMRMHADAZ6B1" target="_blank">
+						<a class="footer-nav-item" href="https://api.whatsapp.com/send/?phone=8680808190&text=urlencodedtext&type=phone_number&app_absent=0" target="_blank">
 							<img class="social-icon" src="{{ url('images/social/whatsapp.svg') }}">
 						</a>
 					</li>
