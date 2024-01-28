@@ -39,10 +39,12 @@
 		<h1 class="lc-header">Category</h1>
 		<div class="category-grid">
 			@foreach($parent_categories as $parent_category)
-				<div class="category-item">
-					<img class="category-image" src="{{ url('media/category/'.$parent_category->image) }}">
-					<span>{{ $parent_category->category_name }}</span>
-				</div>
+				<a href="{{ url('blogs').'?'.$parent_category->category_name }}">
+					<div class="category-item">
+						<img class="category-image" src="{{ url('media/category/'.$parent_category->image) }}">
+						<span>{{ $parent_category->category_name }}</span>
+					</div>
+				</a>
 			@endforeach
 		</div>
 		
