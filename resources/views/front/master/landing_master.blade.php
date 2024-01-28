@@ -33,7 +33,7 @@
 						<a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About Us</a>
 					</li>
 					<li class="header-nav-item">
-						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="https://api.whatsapp.com/send/?phone=8680808190&text=urlencodedtext&type=phone_number&app_absent=0">Contact Us</a>
+						<a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="mailto:labcub.help@gmail.com">Contact Us</a>
 					</li>
 				</ul>
 			</div>
@@ -52,7 +52,7 @@
 				<!-- <li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li> -->
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blogs</a></li>
 				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('legal/about_us') ? ' header-active' : '' }}" href="{{ url('legal/about_us') }}">About us</a></li>
-				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="https://api.whatsapp.com/send/?phone=8680808190&text=urlencodedtext&type=phone_number&app_absent=0">Contact Us</a></li>
+				<li class="header-nav-item"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="mailto:labcub.help@gmail.com">Contact Us</a></li>
 			</ul>
 		</div>
 	</header>
@@ -93,7 +93,7 @@
 					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('/') ? ' header-active' : '' }}" href="{{ url('/') }}">Home</a></li>
 					<!-- <li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="#">Tools</a></li> -->
 					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('blogs') ? ' header-active' : '' }}" href="{{ url('blogs') }}">Blogs</a></li>
-					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="https://api.whatsapp.com/send/?phone=8680808190&text=urlencodedtext&type=phone_number&app_absent=0">Contact Us</a></li>
+					<li class="footer-nav-list"><a class="header-nav-link{{ request()->is('') ? ' header-active' : '' }}" href="mailto:labcub.help@gmail.com">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="footer-nav">
