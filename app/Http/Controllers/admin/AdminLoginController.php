@@ -43,12 +43,14 @@ class AdminLoginController extends Controller
             'password' => 'required'
         ]);
 
-        $credentials = $request->only('email','password');
+        $credentials = $request->only('email', 'password');
 
-        $user = User::where('email',$credentials['email'])->first();
+        $user = User::where('email', $credentials['email'])->first();
 
         if (!$user || !Hash::check($credentials['password'], $user->password)) {
             return redirect()->back()->withErrors(['email' => 'Invalid login credentials.']);
+        } else {
+            Auth::login($user);
         }
 
         return redirect()->intended('admin/dashboard');
