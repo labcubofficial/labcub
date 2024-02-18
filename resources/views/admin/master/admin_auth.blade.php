@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin_style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin_plugin.css') }}">
 	<!--============================== CSS Files ==============================-->
+	<script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
 </head>
 <body class="bg-gradient-primary">

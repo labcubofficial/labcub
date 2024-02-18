@@ -18,12 +18,12 @@
 								{!! Form::email('email',null,['placeholder' => 'Email', 'class' => 'form-control form-control-user']) !!}
 							</div>
 							<div class="form-group">
-								{!! Form::password('password',['placeholder' => 'Password', 'class' => 'form-control form-control-user']) !!}
+								{!! Form::password('password',['placeholder' => 'Password', 'class' => 'form-control form-control-user', 'id' => 'password']) !!}
 							</div>
 							<div class="form-group">
 								<div class="custom-control custom-checkbox small">
-									<input type="checkbox" class="custom-control-input" id="customCheck">
-									<label class="custom-control-label" for="customCheck">Show Password</label>
+									<input type="checkbox" class="custom-control-input" id="passwordCheck">
+									<label class="custom-control-label" for="passwordCheck">Show Password</label>
 								</div>
 							</div>
 							{!! Form::submit('Login', ['class' => 'btn btn-primary width-100']) !!}
@@ -39,4 +39,15 @@
 	</div>
 
 </div>
+
+<script>
+	$('#passwordCheck').on('click', function(){
+		if($(this).is(':checked')){
+			$('#password').attr('type', 'text');
+		}else{
+			$('#password').attr('type', 'password');
+		}
+	});
+</script>
+
 @endsection

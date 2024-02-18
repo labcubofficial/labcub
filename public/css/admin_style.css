@@ -155,7 +155,6 @@ footer {max-width: 100%;height: auto;background: var(--primary);padding: 2em 3em
 .sidebar{
 	background-color: var(--primary);
 	color: #FFF;
-	padding: 1em;
 	min-width: auto;
 }
 
@@ -233,7 +232,7 @@ input[type='text'], input[type='email'], input[type='password'], textarea, selec
 	width: 100%;
 	padding: 0.5rem 0.75rem;
 	font-family: var(--font);
-	border: 2px solid #ccc;
+	border: 1px solid #ccc;
 	line-height: 1.25rem;
 	border-radius: 0.375rem;
 	transition: border-color 0.3s ease, box-shadow 0.3s ease;
