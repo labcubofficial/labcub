@@ -17,7 +17,10 @@ class AdminLoginController extends Controller
      */
     public function index()
     {
-        return view('admin.auth.admin_login');
+        $data = array();
+        $data['title'] = 'Login with labcub admin panel';
+
+        return view('admin.auth.admin_login', $data);
     }
 
     /**
