@@ -30,7 +30,7 @@ class CategoryController extends Controller
                         return $status;
                     })
                     ->addColumn('action', function($row){
-                        $btn = '<button data-id='.$row->id.' class="edit btn btn-info">Edit</button><button data-id='.$row->id.' class="delete btn btn-danger">Delete</button>';
+                        $btn = '<button data-id='.$row->id.' class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">Edit</button><button data-id='.$row->id.' class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Delete</button>';
                         return $btn;
                     })
                     ->rawColumns(['image','status','action'])
