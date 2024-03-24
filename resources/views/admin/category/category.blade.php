@@ -2,40 +2,53 @@
 <script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 @section('content')
-<div class="container-fluid">
-	<div class="d-sm-flex align-items-center justify-content-between mb-4">
-		<h1 class="h3 mb-0 text-gray-800">Category</h1>
-		<div>
-			<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="refresh-category">Refresh</button>
-			<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="add-category">Add Category</button>
-		</div>
-	</div>
-
-	<!-- DataTales Example -->
-	<div class="card shadow mb-4">
-		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">Category List</h6>
-		</div>
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="table" width="100%" cellspacing="0">
-					<thead>
-						<tr>
-							<th>S.No</th>
-							<th>Category Name</th>
-							<th>Image</th>
-							<th>Status</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						{{-- DataTable --}}
-					</tbody>
-				</table>
+<div class="bg-indigo-600 px-8 pt-10 lg:pt-14 pb-16 flex justify-between items-center mb-3">
+	<!-- title -->
+	<h1 class="text-xl text-white">Category</h1>
+	<a href="#" class="btn bg-white text-gray-800 border-gray-600 hover:bg-gray-100 hover:text-gray-800 hover:border-gray-200 active:bg-gray-100 active:text-gray-800 active:border-gray-200 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+		Add Category
+	</a>
+</div>
+<div class="-mt-12 mx-6 mb-6 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-12 xl:grid-cols-12">
+	<div class="card h-full shadow">
+		<div class="border-b border-gray-300 px-5 py-4 flex items-center w-full justify-between">
+			<!-- title -->
+			<div>
+				<h4>Category List</h4>
 			</div>
 		</div>
-	</div>
 
+		<div class="relative overflow-x-auto">
+			<!-- table -->
+			<table class="text-left w-full whitespace-nowrap">
+				<thead class="text-gray-700">
+					<tr>
+						<th scope="col" class="border-b bg-gray-100 px-6 py-3">S. No</th>
+						<th scope="col" class="border-b bg-gray-100 px-6 py-3">Category Name</th>
+						<th scope="col" class="border-b bg-gray-100 px-6 py-3">Image</th>
+						<th scope="col" class="border-b bg-gray-100 px-6 py-3">Status</th>
+						<th scope="col" class="border-b bg-gray-100 px-6 py-3">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach($category as $item)
+					<tr>
+						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">{{ $item->id }}</td>
+						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">{{ $item->category_name }}</td>
+						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left"><img src="{{ url('media/category/') }}" alt="{{ $item->category_name }}" /></td>
+						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">
+							<span class="bg-{{ ($item->status)?'green':'red' }}-100 px-2 py-1 text-{{ ($item->status)?'green':'red' }}-700 text-sm font-medium rounded-md">{{ ($item->status)?'Active':'Inactive' }}</span>
+						</td>
+						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">
+							<button type="button" class="btn gap-x-2 bg-blue-700 text-white border-blue-700 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-blue-700 hover:border-blue-700 active:bg-blue-700 active:border-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">Edit</button>
+							<button type="button" class="btn gap-x-2 bg-red-600 text-white border-red-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-red-700 hover:border-red-700 active:bg-red-700 active:border-red-700 focus:outline-none focus:ring-4 focus:ring-red-300">Delete</button>
+						</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 @endsection
 

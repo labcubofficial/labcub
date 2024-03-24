@@ -9,170 +9,196 @@
 
 	<!--============================== CSS Files ==============================-->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin_style.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_style.css') }}"> -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin_plugin.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome-free/css/all.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
 
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
 </head>
 
 <body>
-	<div id="wrapper">
 
-		<!-- sidebar menu start -->
-		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+	<main>
+		<div id="app-layout" class="overflow-x-hidden flex">
 
-			<!-- Sidebar - Brand -->
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-				<div class="sidebar-brand-text mx-3">Labcub</div>
-			</a>
+			<!-- Sidebar Start -->
+			<nav class="navbar-vertical navbar">
+				<div id="myScrollableElement" class="h-screen" data-simplebar>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider my-0">
+					<a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
+						<h1 style="color: #FFFFFF; font-size: 22px; padding-left: 12px;">Labcub</h1>
+					</a>
 
-			<!-- Nav Item - Dashboard -->
-			<li class="nav-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">
-				<a class="nav-link" href="{{ url('admin/dashboard') }}">
-					<i class="fas fa-fw fa-tachometer-alt"></i><span>Dashboard</span>
-				</a>
-			</li>
+					<!-- Nav Items -->
+					<ul class="navbar-nav flex-col" id="sideNavbar">
+						<li class="nav-item"><a class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}" href="{{ url('admin/dashboard') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/dashboard.svg') }}" alt=""></i>Dashboard</a></li>
+						<li class="nav-item"><a class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}" href="{{ url('admin/category') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/menu.svg') }}" alt="">Category</a></li>
+						<li class="nav-item"><a class="nav-link {{ request()->is('admin/subcategory') ? 'active' : '' }}" href="{{ url('admin/subcategory') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/copy.svg') }}" alt="">Subcategory</a></li>
+						<li class="nav-item"><a class="nav-link {{ request()->is('admin/blog') ? 'active' : '' }}" href="{{ url('admin/blog') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/close.svg') }}" alt="">Subscription</a></li>
+						<li class="nav-item">
+							<div class="navbar-heading">Settings</div>
+						</li>
+						<li class="nav-item"><a class="nav-link  collapsed " href="#!" data-bs-toggle="collapse" data-bs-target="#navPages" aria-expanded="false" aria-controls="navPages"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/dashboard.svg') }}" alt="">Profile</a></li>
+					</ul>
+					<!-- Nav Items -->
 
-			<li class="nav-item {{ request()->is('admin/category') ? 'active' : '' }}">
-				<a class="nav-link" href="{{ url('admin/category') }}">
-				<i class="fas fa-snowflake"></i><span>Category</span>
-				</a>
-			</li>
+				</div>
+			</nav>
+			<!-- Sidebar End -->
 
-			<li class="nav-item {{ request()->is('admin/subcategory') ? 'active' : '' }}">
-				<a class="nav-link" href="{{ url('admin/subcategory') }}">
-				<i class="fas fa-snowflake"></i><span>Subcategory</span>
-				</a>
-			</li>
-
-			<li class="nav-item {{ request()->is('admin/blog') ? 'active' : '' }}">
-				<a class="nav-link" href="{{ url('admin/blog') }}">
-				<i class="fas fa-sticky-note"></i><span>Blog</span>
-				</a>
-			</li>
-
-			<li class="nav-item {{ request()->is('admin/subscription') ? 'active' : '' }}">
-				<a class="nav-link" href="{{ url('admin/subscription') }}">
-				<i class="fas fa-spa"></i><span>Subscription</span>
-				</a>
-			</li>
-
-			<!-- Divider -->
-			<hr class="sidebar-divider">
-
-			<!-- Heading -->
-			<div class="sidebar-heading">Settings</div>
-
-			<!-- Nav Item - Charts -->
-			<li class="nav-item">
-				<a class="nav-link" href="charts.html">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Charts</span></a>
-			</li>
-
-			<!-- Nav Item - Tables -->
-			<li class="nav-item">
-				<a class="nav-link" href="tables.html">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Tables</span></a>
-			</li>
-
-		</ul>
-		<!-- sidebar menu end -->
-
-		<!-- header start -->
-		<div id="content-wrapper" class="d-flex flex-column">
-
-			<div id="content">
-
-				<!-- Topbar -->
-				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-					<!-- Sidebar Toggle (Topbar) -->
-					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-						<i class="fa fa-bars"></i>
-					</button>
-
-					<!-- Topbar Navbar -->
-					<ul class="navbar-nav ml-auto">
-
-						<!-- Nav Item - Search Dropdown (Visible Only XS) -->
-						<li class="nav-item dropdown no-arrow d-sm-none">
-							<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-search fa-fw"></i>
-							</a>
-							<!-- Dropdown - Messages -->
-							<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-								<form class="form-inline mr-auto w-100 navbar-search">
-									<div class="input-group">
-										<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-										<div class="input-group-append">
-											<button class="btn btn-primary" type="button">
-												<i class="fas fa-search fa-sm"></i>
-											</button>
+			<!-- Header Start -->
+			<div id="app-layout-content" class="min-h-screen w-full min-w-[100vw] md:min-w-0 ml-[15.625rem] [transition:margin_0.25s_ease-out]">
+				<!-- start navbar -->
+				<div class="header">
+					<!-- navbar -->
+					<nav class="bg-white px-6 py-[10px] flex items-center justify-between shadow-sm">
+						<a id="nav-toggle" href="#" class="text-gray-800">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							</svg>
+						</a>
+						<!-- navbar nav -->
+						<ul class="flex ml-auto items-center">
+							<li class="dropdown stopevent mr-2">
+								<a class="text-gray-600" href="#" role="button" id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
+									</svg>
+								</a>
+								<div class="dropdown-menu dropdown-menu-lg lg:left-auto lg:right-0" aria-labelledby="dropdownNotification">
+									<div>
+										<div class="border-b px-3 pt-2 pb-3 flex justify-between items-center">
+											<span class="text-lg text-gray-800 font-semibold">Notifications</span>
+											<a href="#">
+												<span>
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+														<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+													</svg>
+												</span>
+											</a>
+										</div>
+										<!-- list group -->
+										<ul class="h-56" data-simplebar="">
+											<!-- list group item -->
+											<li class="bg-gray-100 px-3 py-2 border-b">
+												<a href="#">
+													<h5 class="mb-1">Rishi Chopra</h5>
+													<p class="mb-0">Mauris blandit erat id nunc blandit, ac eleifend dolor pretium.</p>
+												</a>
+											</li>
+											<!-- list group item -->
+											<li class="px-3 py-2 border-b">
+												<a href="#">
+													<h5 class="mb-1">Neha Kannned</h5>
+													<p class="mb-0">Proin at elit vel est condimentum elementum id in ante. Maecenas et sapien metus.</p>
+												</a>
+											</li>
+											<!-- list group item -->
+											<li class="px-3 py-2 border-b">
+												<a href="#">
+													<h5 class="mb-1">Nirmala Chauhan</h5>
+													<p class="mb-0">Morbi maximus urna lobortis elit sollicitudin sollicitudieget elit vel pretium.</p>
+												</a>
+											</li>
+											<!-- list group item -->
+											<li class="px-3 py-2 border-b">
+												<a href="#">
+													<h5 class="mb-1">Sina Ray</h5>
+													<p class="mb-0">Sed aliquam augue sit amet mauris volutpat hendrerit sed nunc eu diam.</p>
+												</a>
+											</li>
+										</ul>
+										<div class="border-top px-3 py-2 text-center">
+											<a href="#" class="text-gray-800 font-semibold">View all Notifications</a>
 										</div>
 									</div>
-								</form>
-							</div>
-						</li>
-
-						<div class="topbar-divider d-none d-sm-block"></div>
-
-						<!-- Nav Item - User Information -->
-						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
-								<img class="img-profile rounded-circle" src="{{ url('media/user_profile/'.auth()->user()->id.'.png') }}">
-							</a>
-							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-									Profile
+								</div>
+							</li>
+							<!-- list -->
+							<li class="dropdown ml-2">
+								<a class="rounded-full" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<div class="w-10 h-10 relative">
+										<img alt="avatar" src="{{ Auth::id() }}" class="rounded-full" />
+										<div class="absolute border-gray-200 border-2 rounded-full right-0 bottom-0 bg-green-600 h-3 w-3"></div>
+									</div>
 								</a>
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-									Settings
-								</a>
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-									Activity Log
-								</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-									Logout
-								</a>
-							</div>
-						</li>
+								<div class="dropdown-menu dropdown-menu-end p-2" aria-labelledby="dropdownUser">
+									<div class="px-4 pb-0 pt-2">
+										<div class="leading-4">
+											<h5 class="mb-1">John E. Grainger</h5>
+											<a href="#">View my profile</a>
+										</div>
+										<div class="border-b mt-3 mb-2"></div>
+									</div>
 
-					</ul>
+									<ul class="list-unstyled">
+										<li>
+											<a class="dropdown-item" href="#">
+												<i class="w-4 h-4" data-feather="user"></i>
+												Edit Profile
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<i class="w-4 h-4" data-feather="activity"></i>
+												Activity Log
+											</a>
+										</li>
 
-				</nav>
-				<!-- End of Topbar -->
-
+										<li>
+											<a class="dropdown-item" href="#">
+												<i class="w-4 h-4" data-feather="star"></i>
+												Go Pro
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<i class="w-4 h-4" data-feather="settings"></i>
+												Account Settings
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="./index.html">
+												<i class="w-4 h-4" data-feather="power"></i>
+												Sign Out
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- end of navbar -->
 				@yield('content')
+				<footer>
+					<div class="px-6 border-t border-gray-300 py-3 flex justify-between items-center">
+						<p class="m-0 leading-6">
+							Labcub Company
+						</p>
+						<a href="" target="_blank">
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-gray-800">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.607 9.607 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48 3.97-1.32 6.833-5.054 6.833-9.458C22 6.463 17.522 2 12 2Z"></path>
+							</svg>
+						</a>
+					</div>
+				</footer>
 
 			</div>
-
-			<!-- footer start -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>&copy; {{ date('Y') }} Labcub company. All Rights Reserved.</span>
-					</div>
-				</div>
-			</footer>
-			<!-- footer end -->
+			<!-- Header End -->
 
 		</div>
-		<!-- header end -->
+	</main>
 
-	</div>
+	<!-- <div class="" style="position: absolute; top: 45%; left: 55%;">
+		<div class="animate-spin inline-block w-8 h-8 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full " role="status" aria-label="loading">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div> -->
+
+	<script src="{{ asset('js/theme.js') }}"></script>
 </body>
 
 </html>

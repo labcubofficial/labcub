@@ -39,6 +39,7 @@ class CategoryController extends Controller
 
         $data = array();
         $data['title'] = 'Category';
+        $data['category'] = Category::where('parent_id','0')->get();
 
         return view('admin.category.category',$data);
     }

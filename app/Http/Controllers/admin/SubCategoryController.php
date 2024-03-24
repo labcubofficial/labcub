@@ -39,9 +39,7 @@ class SubCategoryController extends Controller
 
         $data = array();
         $data['title'] = 'Sub Category';
-        $categories = Category::where('status','1');
-        $data['categories'] = $categories->get();
-        $data['parent_category'] = $categories->where('parent_id','0')->pluck('category_name', 'id');
+        $data['subcategory'] = Category::where('parent_id','<>','0')->get();
 
         return view('admin.subcategory.subcategory', $data);
     }
