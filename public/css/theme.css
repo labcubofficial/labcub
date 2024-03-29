@@ -893,6 +893,14 @@ input::placeholder {
   right: 0px;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
 .start-0 {
   inset-inline-start: 0px;
 }
@@ -903,6 +911,10 @@ input::placeholder {
 
 .top-2 {
   top: 0.5rem;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .top-2\.5 {

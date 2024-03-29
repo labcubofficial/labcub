@@ -47,7 +47,17 @@
 		</div>
 	</div>
 
+	@if(count($errors))
+		<div id="alert" class="bg-red-500 mb-3 text-white rounded-lg p-4 absolute top-4 right-4" role="alert">
+			<span class="font-bold">Alert </span> {{ $errors }}
+		</div>
+	@endif
+
 	<script>
+		setTimeout(function() {
+	    	$('#alert').hide();
+    	}, 5000);
+
 		$('#passwordCheck').on('click', function() {
 			if ($(this).is(':checked')) {
 				$('#password').attr('type', 'text');
