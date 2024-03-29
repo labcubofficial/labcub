@@ -1,53 +1,59 @@
 @extends('admin.master.admin_auth')
 
 @section('content')
-<div class="col-xl-10 col-lg-12 col-md-9">
+	<div class="justify-center items-center w-full bg-white rounded-md shadow lg:flex md:mt-0 max-w-md xl:p-0">
+		<!-- card body -->
+		<div class="p-6 w-full sm:p-8 lg:p-8">
+			<div class="mb-4">
+				<h3>Labcub</h3>
+				<p class="mb-6">Please enter your user information.</p>
+			</div>
+			<!-- form -->
+			<form method="POST" action="{{ route('login.store') }}">
+				@csrf
+				<!-- username -->
+				<div class="mb-3">
+					<label for="email" class="inline-block mb-2">Email</label>
+					<input type="email" name="email" id="email" value="" placeholder="Enter your Email" class="border border-gray-300 text-gray-900 rounded focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none">
+				</div>
+				<!-- password -->
+				<div class="mb-5">
+					<label for="password" class="inline-block mb-2">Password</label>
+					<input type="password" name="password" id="password" value="" placeholder="Enter your Password" class="border border-gray-300 text-gray-900 rounded focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none">
+				</div>
+				<!-- checkbox -->
+				<div class="lg:flex justify-between items-center mb-4">
+					<div class="flex items-center">
+						<input type="checkbox" class="w-4 h-4 text-indigo-600 bg-white border-gray-300 rounded focus:ring-indigo-600 focus:outline-none focus:ring-2" id="passwordCheck" />
+						<label class="inline-block ms-2" for="rememberme">Show password</label>
+					</div>
+				</div>
+				<div>
+					<!-- button -->
+					<div class="grid">
+						<input type="submit" value="Login" class="btn bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-800 hover:border-indigo-800 active:bg-indigo-800 active:border-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+					</div>
 
-	<div class="card o-hidden border-0 shadow-lg my-5">
-		<div class="card-body p-0">
-			<!-- Nested Row within Card Body -->
-			<div class="row">
-				<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-				<div class="col-lg-6">
-					<div class="p-5">
-						<div class="text-center">
-							<h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+					<div class="flex justify-between mt-4">
+						<div class="mb-2">
+							<a href="sign-up.html" class="text-indigo-600 hover:text-indigo-600">Create An Account</a>
 						</div>
-						{!! Form::open(['route'=>'login.store', 'method'=>'POST', 'class' => 'user']) !!}
-							<div class="form-group">
-								{!! Form::email('email',null,['placeholder' => 'Email', 'class' => 'form-control form-control-user']) !!}
-							</div>
-							<div class="form-group">
-								{!! Form::password('password',['placeholder' => 'Password', 'class' => 'form-control form-control-user', 'id' => 'password']) !!}
-							</div>
-							<div class="form-group">
-								<div class="custom-control custom-checkbox small">
-									<input type="checkbox" class="custom-control-input" id="passwordCheck">
-									<label class="custom-control-label" for="passwordCheck">Show Password</label>
-								</div>
-							</div>
-							{!! Form::submit('Login', ['class' => 'btn btn-primary width-100']) !!}
-						{!! Form::close() !!}
-						<hr>
-						<div class="text-center">
-							<a class="small" href="#">Forgot Password?</a>
+						<div>
+							<a href="forget-password.html" class="text-indigo-600 hover:text-indigo-600">Forgot your password?</a>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 
-</div>
-
-<script>
-	$('#passwordCheck').on('click', function(){
-		if($(this).is(':checked')){
-			$('#password').attr('type', 'text');
-		}else{
-			$('#password').attr('type', 'password');
-		}
-	});
-</script>
-
+	<script>
+		$('#passwordCheck').on('click', function() {
+			if ($(this).is(':checked')) {
+				$('#password').attr('type', 'text');
+			} else {
+				$('#password').attr('type', 'password');
+			}
+		});
+	</script>
 @endsection
