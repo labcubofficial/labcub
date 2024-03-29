@@ -14,12 +14,12 @@
 				<!-- username -->
 				<div class="mb-3">
 					<label for="email" class="inline-block mb-2">Email</label>
-					<input type="email" name="email" id="email" value="" placeholder="Enter your Email" class="border border-gray-300 text-gray-900 rounded focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none">
+					<x-input type="email" name="email" id="email" placeholder="Enter your Email" />
 				</div>
 				<!-- password -->
 				<div class="mb-5">
 					<label for="password" class="inline-block mb-2">Password</label>
-					<input type="password" name="password" id="password" value="" placeholder="Enter your Password" class="border border-gray-300 text-gray-900 rounded focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2 px-3 disabled:opacity-50 disabled:pointer-events-none">
+					<x-input type="password" name="password" id="password" placeholder="Enter your Password" />
 				</div>
 				<!-- checkbox -->
 				<div class="lg:flex justify-between items-center mb-4">
