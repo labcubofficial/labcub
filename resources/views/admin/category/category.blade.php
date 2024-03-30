@@ -40,8 +40,8 @@
 							<span class="bg-{{ ($item->status)?'green':'red' }}-100 px-2 py-1 text-{{ ($item->status)?'green':'red' }}-700 text-sm font-medium rounded-md">{{ ($item->status)?'Active':'Inactive' }}</span>
 						</td>
 						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">
-							<button type="button" class="btn gap-x-2 bg-blue-700 text-white border-blue-700 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-blue-700 hover:border-blue-700 active:bg-blue-700 active:border-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">Edit</button>
-							<button type="button" class="btn gap-x-2 bg-red-600 text-white border-red-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-red-700 hover:border-red-700 active:bg-red-700 active:border-red-700 focus:outline-none focus:ring-4 focus:ring-red-300">Delete</button>
+							<a type="button" href="{{ route('category.edit', $item->id) }}" class="btn gap-x-2 bg-blue-700 text-white border-blue-700 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-blue-700 hover:border-blue-700 active:bg-blue-700 active:border-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">Edit</a>
+							<a type="button" href="{{ url('admin/category/delete').'/'.$item->id }}" class="btn gap-x-2 bg-red-600 text-white border-red-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-red-700 hover:border-red-700 active:bg-red-700 active:border-red-700 focus:outline-none focus:ring-4 focus:ring-red-300">Delete</a>
 						</td>
 					</tr>
 					@endforeach

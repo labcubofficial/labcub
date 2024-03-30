@@ -57,6 +57,7 @@
                <div class="flex-1 text-gray-800 font-semibold"></div>
                <div class="flex-[3]">
                   <button type="submit" class="btn bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-800 hover:border-indigo-800 active:bg-indigo-800 active:border-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300">Upload</button>
+                  <a href="{{ url('admin/category') }}" type="submit" class="btn gap-x-2 bg-gray-400 text-gray-800 border-gray-400 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-600 hover:border-gray-600 active:bg-gray-600 active:border-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300">Cancel</a>
                </div>
             </div>
          </form>

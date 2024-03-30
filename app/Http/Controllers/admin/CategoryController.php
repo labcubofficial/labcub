@@ -74,29 +74,14 @@ class CategoryController extends Controller
         
         $status = ($request->status == '1')?'1':'0';
 
-        if($request->category_id == 0){
-            // Adding new category
-            Category::insert([
-                'parent_id' => 0,
-                'category_name' => $request->category_name,
-                'image' => $filename,
-                'status' => $status,
-                'created_at' => date('Y-m-d H:i:s'),
-            ]);
-        }else{
-            // Updating exisitng data
-            $category = Category::find($request->category_id);
-            $category->category_name = $request->category_name;
-            $category->image = isset($filename)?$filename:$request->old_image;
-            $category->status = $status;
-            $category->updated_at = date('Y-m-d H:i:s');
-            $category->save();
-
-            if(isset($filename)){
-                $imagePath = 'media/category/'.$request->old_image;
-                File::delete($imagePath);
-            }
-        }
+        // Adding new category
+        Category::insert([
+            'parent_id' => 0,
+            'category_name' => $request->category_name,
+            'image' => $filename,
+            'status' => $status,
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
 
         return redirect()->route('category.index');
     }
@@ -120,8 +105,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::find($id);
-        return response()->json($categories);
+        $data = array();
+        $data['title'] = 'Edit Category';
+        $data['categories'] = Category::find($id);
+        
+        return view('admin.category.edit', $data);
     }
 
     /**
@@ -133,7 +121,29 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id); 
+
+        if(isset($request->image)){
+            $filename = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('media/category'), $filename);
+        }else{
+            $filename = null;
+        }
+
+        // Updating exisitng data
+        $category = Category::find($id);
+        $category->category_name = $request->category_name;
+        $category->image = isset($filename)?$filename:$category->image;
+        $category->status = $request->status;
+        $category->updated_at = date('Y-m-d H:i:s');
+        $category->save();
+
+        if(isset($filename)){
+            $imagePath = 'media/category/'.$request->old_image;
+            File::delete($imagePath);
+        }
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -153,6 +163,6 @@ class CategoryController extends Controller
 
         $category->delete();
         
-        return response()->json(['success' => true]);
+        return redirect()->route('category.index');
     }    
 }
