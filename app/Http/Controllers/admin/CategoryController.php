@@ -51,7 +51,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();
+        $data['title'] = 'Add Category';
+
+        return view('admin.category.create', $data);
     }
 
     /**
@@ -69,7 +72,7 @@ class CategoryController extends Controller
             $filename = null;
         }
         
-        $status = isset($request->status)?'1':'0';
+        $status = ($request->status == '1')?'1':'0';
 
         if($request->category_id == 0){
             // Adding new category

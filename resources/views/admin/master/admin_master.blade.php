@@ -52,7 +52,7 @@
 				<!-- start navbar -->
 				<div class="header">
 					<!-- navbar -->
-					<nav class="bg-white px-6 py-[10px] flex items-center justify-between shadow-sm">
+					<nav class="bg-slate-800 px-6 py-[10px] flex items-center justify-between shadow-sm">
 						<a id="nav-toggle" href="#" class="text-gray-800">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -60,6 +60,10 @@
 						</a>
 						<!-- navbar nav -->
 						<ul class="flex ml-auto items-center">
+							<div class="mr-2">
+								<input type="checkbox" value="1" id="theme" class="relative w-[2.3rem] h-5 p-px bg-gray-200 border-transparent text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 disabled:opacity-50 disabled:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:w-4 before:h-4 before:bg-white checked:before:bg-indigo-200 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200" checked />
+								<label for="switch-default1" class="sr-only">switch</label>
+							</div>
 							<li class="dropdown stopevent mr-2">
 								<a class="text-gray-600" href="#" role="button" id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -199,6 +203,17 @@
 	</div> -->
 
 	<script src="{{ asset('js/theme.js') }}"></script>
+	<script src="{{ asset('js/admin_script.js') }}"></script>
+	<script>
+		$('#theme').on('click', function(){
+			let theme_type = $('#theme').val();
+			if(theme_type == 1){
+				$('#theme').val(0);
+			}else{
+				$('#theme').val(1);
+			}
+		});
+	</script>
 </body>
 
 </html>
