@@ -17,26 +17,6 @@ class SubCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Category::where('parent_id','<>','0')->get();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('image', function($row){
-                        $image = isset($row->image)?'<img src="'.asset('media/sub_category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
-                        return $image;
-                    })
-                    ->addColumn('status', function($row){
-                        $status = ($row->status == 1)?"<span>Active</span>":"<span>Inactive</span>";
-                        return $status;
-                    })
-                    ->addColumn('action', function($row){
-                        $btn = '<button data-id='.$row->id.' class="edit btn btn-info">Edit</button><button data-id='.$row->id.' class="delete btn btn-danger">Delete</button>';
-                        return $btn;
-                    })
-                    ->rawColumns(['image','status','action'])
-                    ->make(true);
-        }
-
         $data = array();
         $data['title'] = 'Sub Category';
         $data['subcategory'] = Category::where('parent_id','<>','0')->get();
@@ -51,7 +31,11 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();
+        $data['title'] = 'Add Sub Category';
+        $data['subcategory'] = Category::where('parent_id','=','0')->get();
+
+        return view('admin.subcategory.create', $data);
     }
 
     /**
@@ -101,7 +85,12 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = array();
+        $data['title'] = 'Edit Subcategory';
+        $data['sub_category'] = Category::find($id);
+        $data['subcategory'] = Category::where('parent_id','=','0')->get();
+
+        return view('admin.subcategory.edit', $data);
     }
 
     /**
@@ -113,7 +102,32 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id); 
+
+        if(isset($request->image)){
+            $filename = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('media/category'), $filename);
+        }else{
+            $filename = null;
+        }
+
+        $status = isset($request->status)?'1':'0';
+
+        // Updating exisitng data
+        $category = Category::find($id);
+        $category->category_name = $request->category_name;
+        $category->parent_id = $request->parent_category;
+        $category->image = isset($filename)?$filename:$category->image;
+        $category->status = $status;
+        $category->updated_at = date('Y-m-d H:i:s');
+        $category->save();
+
+        if(isset($filename)){
+            $imagePath = 'media/category/'.$request->old_image;
+            File::delete($imagePath);
+        }
+
+        return redirect()->route('subcategory.index');
     }
 
     /**
@@ -135,6 +149,6 @@ class SubCategoryController extends Controller
         // Deleting data from database
         $category->delete();
         
-        return response()->json(['success' => true]);
+        return redirect()->route('subcategory.index');
     }
 }

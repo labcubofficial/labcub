@@ -35,6 +35,7 @@ Route::middleware(['admin'])->group(function () {
         Route::resource('category','admin\CategoryController');
         Route::get('category/delete/{id}','admin\CategoryController@destroy');
         Route::resource('subcategory','admin\SubCategoryController');
+        Route::get('subcategory/delete/{id}','admin\SubCategoryController@destroy');
         Route::resource('blog','admin\BlogController');
         Route::get('blog/delete/{id}', 'admin\BlogController@destroy');
         Route::resource('subscription','admin\SubscriptionController');

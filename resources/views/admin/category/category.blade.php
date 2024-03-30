@@ -31,9 +31,10 @@
 					</tr>
 				</thead>
 				<tbody>
+					<?php $count = 0; ?>
 					@foreach($category as $item)
 					<tr>
-						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">{{ $item->id }}</td>
+						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">{{ ++$count }}</td>
 						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">{{ $item->category_name }}</td>
 						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left"><img src="{{ url('media/category/') }}" alt="{{ $item->category_name }}" /></td>
 						<td class="border-b border-gray-300 font-medium py-3 px-6 text-left">

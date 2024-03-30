@@ -17,26 +17,6 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Category::where('parent_id','0')->get();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('image', function($row){
-                        $image = isset($row->image)?'<img src="'.asset('media/category/'.$row->image).'" class="table-image" alt="image">':'<img src="'.asset('asset/images/category/blank.png').'" class="table-image" alt="image">';
-                        return $image;
-                    })
-                    ->addColumn('status', function($row){
-                        $status = ($row->status == 1)?"<span>Active</span>":"<span>Inactive</span>";
-                        return $status;
-                    })
-                    ->addColumn('action', function($row){
-                        $btn = '<button data-id='.$row->id.' class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">Edit</button><button data-id='.$row->id.' class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Delete</button>';
-                        return $btn;
-                    })
-                    ->rawColumns(['image','status','action'])
-                    ->make(true);
-        }
-
         $data = array();
         $data['title'] = 'Category';
         $data['category'] = Category::where('parent_id','0')->get();
