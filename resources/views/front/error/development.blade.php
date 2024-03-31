@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Labcub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <style>
-        .underDevelopmentPopup{
-            max-width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tailwind.css') }}">
+    <script src="{{ asset('js/tailwind.js') }}"></script>
+    <title>Document</title>
 </head>
+
 <body>
-
-<!-- Your other website content goes here -->
-
-<!-- Popup or banner container -->
-<div class="underDevelopmentPopup">
-    <div class="popup-content">
-        <img src="{{ asset('favicon.png') }}" alt="" style="width: 100px; height: 100px; padding: 1em;">
-        <p style="font-size: 16px;">Our website is currently under development to bring you a better experience. Thank you for your patience!</p>
-        <p style="font-size: 16px; font-weight: 600;">Team Labcub</p>
-    </div>
-</div>
-
-<!-- Your other website content goes here -->
-
+    <main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <div class="text-center">
+            <p class="text-base font-semibold text-indigo-600">404</p>
+            <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Page not found</h1>
+            <p class="mt-6 text-base leading-7 text-gray-600">Sorry, we couldn’t find the page you’re looking for.</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <!-- <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go back home</a>
+                <a href="#" class="text-sm font-semibold text-gray-900">Contact support <span aria-hidden="true">&rarr;</span></a> -->
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

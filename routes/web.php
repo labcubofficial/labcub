@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function(){
 //     return view('front.error.development');
 // });
-Route::get('/', 'front\HomeController@index');
+Route::get('/', 'front\HomeController@maintenance');
+Route::get('home', 'front\HomeController@index');
 Route::get('blogs', 'front\BlogController@index');
 Route::get('blog/{category}/{sub_category}/{slug}', 'front\BlogController@show');
 // Route::fallback('front\ErrorController@error404');
