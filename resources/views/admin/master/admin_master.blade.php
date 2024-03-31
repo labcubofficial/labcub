@@ -35,7 +35,7 @@
 						<li class="nav-item"><a class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}" href="{{ url('admin/dashboard') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/dashboard.svg') }}" alt=""></i>Dashboard</a></li>
 						<li class="nav-item"><a class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}" href="{{ url('admin/category') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/menu.svg') }}" alt="">Category</a></li>
 						<li class="nav-item"><a class="nav-link {{ request()->is('admin/subcategory') ? 'active' : '' }}" href="{{ url('admin/subcategory') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/copy.svg') }}" alt="">Subcategory</a></li>
-						<li class="nav-item"><a class="nav-link {{ request()->is('admin/blog') ? 'active' : '' }}" href="{{ url('admin/blog') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/close.svg') }}" alt="">Subscription</a></li>
+						<li class="nav-item"><a class="nav-link {{ request()->is('admin/blog') ? 'active' : '' }}" href="{{ url('admin/blog') }}"><img class="w-4 h-4 mr-2" src="{{ url('images/icon/close.svg') }}" alt="">Blog</a></li>
 						<li class="nav-item">
 							<div class="navbar-heading">Settings</div>
 						</li>
