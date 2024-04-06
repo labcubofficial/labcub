@@ -48,3 +48,7 @@
 body{
     font-family: var(--font) !important;
 }
+
+.lc-color-red{
+    color: #dc2626;
+}

@@ -20,6 +20,7 @@ Route::get('/', 'front\HomeController@maintenance');
 Route::get('home', 'front\HomeController@index');
 Route::get('blogs', 'front\BlogController@index');
 Route::get('blog/{category}/{sub_category}/{slug}', 'front\BlogController@show');
+Route::get('contact-us', 'front\ContactUsController@index');
 // Route::fallback('front\ErrorController@error404');
 
 Route::get('legal/privacy_policy', function(){ return view('front.legal.privacy_policy'); });
