@@ -17,7 +17,7 @@ class ContactUsController extends Controller
         $data = array();
         $data['title'] = 'Contact Us';
 
-        return view('front.contact_us.contact');
+        return view('front.contact_us.contact', $data);
     }
 
     /**
