@@ -9,9 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/tailwind.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 	<!--============================== CSS Files ==============================-->
-	<!--============================== Adsense ==============================-->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4764751757078002" crossorigin="anonymous"></script>
-	<!--============================== Adsense ==============================-->
 	<script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script>
 	<script src="{{ asset('js/tailwind.js') }}"></script>
 	<title>Labcub | {{ isset($title)? $title : 'Create your work faster with labcub'; }}</title>
@@ -47,7 +44,7 @@
 		<!-- Mobile menu, show/hide based on menu open state. -->
 		<div class="lg:hidden" role="dialog" aria-modal="true">
 			<!-- Background backdrop, show/hide based on slide-over state. -->
-			<div class="fixed inset-0 z-50"></div>
+			<!-- <div class="fixed inset-0 z-50"></div> -->
 			<div style="display: none;" class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 				<div class="flex items-center justify-between">
 					<a href="#" class="-m-1.5 p-1.5">
