@@ -15,10 +15,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function maintenance()
-    {
-        return view('front.error.development');
-    }
     public function index()
     {
         $data = array();

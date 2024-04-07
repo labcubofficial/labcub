@@ -27,7 +27,7 @@
 		
 		<div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 			<div class="lg:pr-4">
-				<div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+				<div class="">
 					<p>Welcome to <a href="{{ url('') }}"><b>Labcub</b></a>, your ultimate destination for all things programming and technical knowledge. We are dedicated to empowering developers and aspiring tech enthusiasts with a treasure trove of services, products, blogs, and documents that make the world of programming and technology more accessible than ever before.</p>
 					<ul role="list" class="mt-8 space-y-8 text-gray-600">
 						<li class="flex gap-x-3">
