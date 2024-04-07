@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'front\HomeController@index');
+Route::get('login', 'front\AuthController@login');
+Route::get('register', 'front\AuthController@register');
+Route::get('verify-otp', 'front\AuthController@verify_otp');
 Route::get('blogs', 'front\BlogController@index');
 Route::get('blog/{category}/{sub_category}/{slug}', 'front\BlogController@show');
 Route::get('contact-us', 'front\ContactUsController@index');

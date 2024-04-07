@@ -24,12 +24,12 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 			<div class="lg:pr-4">
 				<div class="">
 					<p>Welcome to <a href="{{ url('') }}"><b>Labcub</b></a>, your ultimate destination for all things programming and technical knowledge. We are dedicated to empowering developers and aspiring tech enthusiasts with a treasure trove of services, products, blogs, and documents that make the world of programming and technology more accessible than ever before.</p>
-					<ul role="list" class="mt-8 space-y-8 text-gray-600">
+					<!-- <ul role="list" class="mt-8 space-y-8 text-gray-600">
 						<li class="flex gap-x-3">
 							<svg class="mt-1 h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 								<path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd" />
@@ -49,10 +49,41 @@
 							</svg>
 							<span><strong class="font-semibold text-gray-900">Database backups.</strong> Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</span>
 						</li>
+					</ul> -->
+					<h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900">Who We Are:</h2>
+
+					<p class="mt-4">At <a href="{{ url('') }}"><b>Labcub</b></a>, we are a team of passionate developers, tech enthusiasts, and educators who share a common mission: to demystify the complexities of programming and technical concepts. We believe that everyone should have the opportunity to learn and excel in the world of technology, regardless of their background or experience level.</p>
+
+					<h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900">What We Offer:</h2>
+
+					<ol class="mt-4">
+						<li class="mt-4"><b>Comprehensive Learning Resources: </b>Our platform offers a vast array of tutorials, guides, and documentation that cover a wide range of programming languages, frameworks, and technologies. Whether you're a beginner looking to get started or an experienced developer seeking to deepen your skills, we have something for everyone.</li>
+
+						<li class="mt-4"><b>Cutting-Edge Products: </b>We provide a curated selection of tools, software, and applications designed to streamline your development process. From code editors and version control systems to productivity-enhancing apps, we've got you covered.</li>
+
+						<li class="mt-4"><b>Insightful Blogs and Articles: </b>Our team of experts and guest contributors regularly publish informative and engaging blogs and articles. Explore the latest trends, best practices, and real-world insights to stay ahead in the rapidly evolving tech landscape.</li>
+
+						<li class="mt-4"><b>Developer Community: </b>Join our vibrant community of like-minded individuals who are passionate about programming and technology. Connect with fellow developers, ask questions, share your knowledge, and collaborate on exciting projects.</li>
+					</ol>
+
+					<h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900">Our Commitment:</h2>
+
+					<ul class="mt-4">
+						<li class="mt-4"><b>Accessibility: </b>We are committed to breaking down barriers and making technical knowledge accessible to everyone. Our content is designed to cater to diverse learning styles and levels of expertise.</li>
+
+						<li class="mt-4"><b>Quality: </b>We pride ourselves on providing high-quality, accurate, and up-to-date content. Our team of experts ensures that you receive the most reliable information and guidance.</li>
+
+						<li class="mt-4"><b>Innovation: </b>Technology is constantly evolving, and so are we. We stay at the forefront of industry advancements, continuously updating our resources and offerings to keep you ahead of the curve.</li>
+
+						<li class="mt-4"><b>Community-Centric: </b>We value the contributions of our community members and actively encourage collaboration and knowledge sharing. Together, we can achieve more.</li>
 					</ul>
-					<p class="mt-8">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
-					<h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2>
-					<p class="mt-6">Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.</p>
+
+					<h2 class="mt-8 text-2xl font-bold tracking-tight text-gray-900">Join Us in Your Tech Journey:</h2>
+
+					<p class="mt-4">Whether you're an aspiring developer, a seasoned pro, or simply curious about the world of programming and technology, <a href="{{ url('') }}"><b>Labcub</b></a> is your trusted companion on your journey to technical mastery. Together, we will simplify the complex, unravel the mysteries of code, and empower you to create, innovate, and excel in the digital age.</p>
+
+					<p>Thank you for choosing <a href="{{ url('') }}"><b>Labcub</b></a> as your trusted source for all your programming and technical needs. Let's embark on this exciting journey together and turn your programming dreams into reality!</p>
+
 				</div>
 			</div>
 		</div>
