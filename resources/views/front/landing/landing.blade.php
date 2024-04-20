@@ -3,14 +3,11 @@
 @section('content')
 <div class="bg-white">
 	<div class="relative isolate px-6 pt-14 lg:px-8">
-		<div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-			<div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-		</div>
-		<div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+		<div class="mx-auto max-w-2xl py-32">
 			<div class="hidden sm:mb-8 sm:flex sm:justify-center">
-				<div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+				<!-- <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
 					Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
-				</div>
+				</div> -->
 			</div>
 			<div class="text-center">
 				<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Where Code Comes to Life: Ignite Your Passion for Programming</h1>
@@ -99,97 +96,25 @@
 <!-- Blog Start -->
 <div class="bg-white py-24 sm:py-32">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl lg:mx-0">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
-			<p class="mt-2 text-lg leading-8 text-gray-600">Learn how to grow your business with our expert advice.</p>
-		</div>
-		<div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-			<article class="flex max-w-xl flex-col items-start justify-between">
-				<div class="flex items-center gap-x-4 text-xs">
-					<time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-					<a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
-				</div>
-				<div class="group relative">
-					<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-						<a href="#">
-							<span class="absolute inset-0"></span>
-							Boost your conversion rate
-						</a>
-					</h3>
-					<p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-				</div>
-				<div class="relative mt-8 flex items-center gap-x-4">
-					<img src="" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-					<div class="text-sm leading-6">
-						<p class="font-semibold text-gray-900">
-							<a href="#">
-								<span class="absolute inset-0"></span>
-								Michael Foster
-							</a>
-						</p>
-						<p class="text-gray-600">Co-Founder / CTO</p>
+		<div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+
+			@foreach($blogs as $blog)
+				<article class="flex max-w-xl flex-col items-start justify-between border-2 rounded">
+					<img src="{{ url('media/blog').'/'.$blog['image'] }}" alt="" class="h-full w-full">
+					<div class="flex items-center gap-x-4 text-xs pr-2 pl-2 pt-2">
+						<time datetime="2020-03-16" class="text-gray-500">{{ $blog['created_at'] }}</time>
+						<a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $blog['category_name'] }}</a>
 					</div>
-				</div>
-			</article>
-
-
-			<article class="flex max-w-xl flex-col items-start justify-between">
-				<div class="flex items-center gap-x-4 text-xs">
-					<time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-					<a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
-				</div>
-				<div class="group relative">
-					<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-						<a href="#">
-							<span class="absolute inset-0"></span>
-							Boost your conversion rate
-						</a>
-					</h3>
-					<p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-				</div>
-				<div class="relative mt-8 flex items-center gap-x-4">
-					<img src="" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-					<div class="text-sm leading-6">
-						<p class="font-semibold text-gray-900">
+					<div class="group relative pr-2 pl-2 pb-2">
+						<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
 							<a href="#">
-								<span class="absolute inset-0"></span>
-								Michael Foster
-							</a>
-						</p>
-						<p class="text-gray-600">Co-Founder / CTO</p>
+								<span class="absolute inset-0"></span>{{ $blog['title'] }}</a>
+						</h3>
+						<p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ $blog['short_description'] }}</p>
 					</div>
-				</div>
-			</article>
+				</article>
+			@endforeach
 
-			<article class="flex max-w-xl flex-col items-start justify-between">
-				<div class="flex items-center gap-x-4 text-xs">
-					<time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-					<a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
-				</div>
-				<div class="group relative">
-					<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-						<a href="#">
-							<span class="absolute inset-0"></span>
-							Boost your conversion rate
-						</a>
-					</h3>
-					<p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-				</div>
-				<div class="relative mt-8 flex items-center gap-x-4">
-					<img src="" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-					<div class="text-sm leading-6">
-						<p class="font-semibold text-gray-900">
-							<a href="#">
-								<span class="absolute inset-0"></span>
-								Michael Foster
-							</a>
-						</p>
-						<p class="text-gray-600">Co-Founder / CTO</p>
-					</div>
-				</div>
-			</article>
-
-			<!-- More posts... -->
 		</div>
 	</div>
 </div>

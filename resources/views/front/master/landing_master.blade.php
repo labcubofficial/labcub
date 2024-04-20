@@ -18,9 +18,8 @@
 	<header class="absolute inset-x-0 top-0 z-50">
 		<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 			<div class="flex lg:flex-1">
-				<a href="#" class="-m-1.5 p-1.5">
-					<span class="sr-only">Labcub</span>
-					<h1>Labcub</h1>
+				<a href="{{ url('') }}" class="-m-1.5 p-1.5">
+					<span class="text-3xl font-bold">Labcub</span>
 				</a>
 			</div>
 			<div class="flex lg:hidden">
@@ -32,10 +31,10 @@
 				</button>
 			</div>
 			<div class="hidden lg:flex lg:gap-x-12">
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Blogs</a>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Contact us</a>
+				<a href="{{ url('') }}" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+				<a href="{{ url('blogs') }}" class="text-sm font-semibold leading-6 text-gray-900">Blogs</a>
+				<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Service</a>
+				<a href="{{ url('contact-us') }}" class="text-sm font-semibold leading-6 text-gray-900">Contact us</a>
 			</div>
 			<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 				<a href="{{ url('login') }}" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>

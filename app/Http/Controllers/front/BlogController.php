@@ -27,11 +27,13 @@ class BlogController extends Controller
         foreach($blogs as $blog){
 
             $category_slug = Str::slug(Category::category($blog->category_id)->category_name, '-');
+            $category_name = Category::category($blog->category_id)->category_name;
             $subcategory_slug = Str::slug(Category::category($blog->subcategory_id)->category_name, '-');
 
             $blog_arr[] = [
                 'id' => $blog->id,
-                'category_name' => $category_slug,
+                'category_slug' => $category_slug,
+                'category_name' => $category_name,
                 'subcategory_name' => $subcategory_slug,
                 'title' => $blog->title,
                 'short_description' => $blog->short_description,
@@ -39,6 +41,7 @@ class BlogController extends Controller
                 'image' => $blog->image,
                 'slug' => $blog->slug,
                 'is_recommended' => $blog->is_recommended,
+                'created_at' => date('M d, Y', strtotime($blog->created_at)),
             ];
         }
 
@@ -93,7 +96,7 @@ class BlogController extends Controller
         $blog->category_id = Category::category($blog->category_id)->category_name;
 
         $data['title'] = $blog->title;
-        $data['blog'] = $blog;
+        $data['blogs'] = $blog;
 
         $menu = explode(',', $blog->menu);
         $data['menu'] = $menu;
