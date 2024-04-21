@@ -96,7 +96,7 @@ class BlogController extends Controller
         $blog->category_id = Category::category($blog->category_id)->category_name;
 
         $data['title'] = $blog->title;
-        $data['blogs'] = $blog;
+        $data['blog'] = $blog;
 
         $menu = explode(',', $blog->menu);
         $data['menu'] = $menu;
