@@ -15,7 +15,7 @@ class CreateBlogInteractionsTable extends Migration
     {
         Schema::create('blog_interactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('blog_id');
+            $table->foreignId('blog_id')->constrained();
             $table->unsignedBigInteger('views')->nullable();
             $table->integer('likes')->nullable();
             $table->integer('earnings')->nullable();

@@ -16,8 +16,10 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->integer('parent_id')->default(0)->comment('0->Parent, Parent ID');
-            $table->string('category_name',100);
-            $table->string('image',100)->nullable();
+            $table->string('category_name', length: 100);
+            $table->string('bg_color', length: 10)->nullable();
+            $table->string('image', length: 100)->nullable();
+            $table->tinyInteger('order_by')->nullable();
             $table->enum('status',[0,1])->default(0)->comment('0->Active, 1->InActive');
             $table->timestamps();
         });

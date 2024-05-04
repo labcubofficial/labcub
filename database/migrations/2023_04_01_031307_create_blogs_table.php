@@ -15,8 +15,8 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->nullable();
-            $table->integer('subcategory_id')->nullable();
+            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('subcategory_id')->constrained('categories');
             $table->string('title',100)->nullable();
             $table->string('short_description',255)->nullable();
             $table->string('intro', 550);
@@ -24,6 +24,7 @@ class CreateBlogsTable extends Migration
             $table->text('menu');
             $table->string('image',100)->nullable();
             $table->string('slug',255)->nullable();
+            $table->tinyInteger('order_by')->nullable();
             $table->enum('is_recommended',[0,1])->default(0)->comment('0->not_recommended, 1->recommended');
             $table->timestamps();
         });
