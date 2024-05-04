@@ -45,11 +45,11 @@
 <section class="bg-white">
 	<div class="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
 		<h2 class="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 md:text-4xl">Category</h2>
-		<div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6">
+		<div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 justify-items-center">
 			@foreach($parent_categories as $category)
 
-			<a class="w-28 h-28 text-center cursor-pointer">
-				<div class="bg-amber-100 rounded">
+			<a href="{{ url('') }}" class="w-28 h-28 text-center cursor-pointer">
+				<div class="rounded" style="background-color: <?php echo $category->bg_color ?>;">
 					<img class="" src="{{ asset('media/category').'/'.$category->image }}" alt="">
 				</div>
 				<p class="text-base p-2">{{ $category->category_name }}</p>
