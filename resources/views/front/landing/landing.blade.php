@@ -48,12 +48,12 @@
 		<div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6">
 			@foreach($parent_categories as $category)
 
-				<a class="w-28 h-28 text-center cursor-pointer">
-					<div class="bg-amber-100 rounded">
-						<img class="" src="{{ asset('media/category').'/'.$category->image }}" alt="">
-					</div>
-					<p class="text-base p-2">{{ $category->category_name }}</p>
-				</a>
+			<a class="w-28 h-28 text-center cursor-pointer">
+				<div class="bg-amber-100 rounded">
+					<img class="" src="{{ asset('media/category').'/'.$category->image }}" alt="">
+				</div>
+				<p class="text-base p-2">{{ $category->category_name }}</p>
+			</a>
 
 			@endforeach
 		</div>
@@ -62,30 +62,31 @@
 <!-- Category End -->
 
 <!-- Blog Start -->
-<section class="bg-white">
-	<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-		<div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-			<h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">Blogs</h2>
-		</div>
-		<div class="grid gap-8 lg:grid-cols-3">
+<div class="bg-white py-24 sm:py-32">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
-		@foreach($blogs as $blog)
-			<article class="bg-white rounded border border-gray-200 shadow-md">
+			@foreach($blogs as $blog)
+			<article class="flex max-w-xl flex-col items-start justify-between rounded border">
 				<a href="{{ url('blog').'/'.$blog['category_name'].'/'.$blog['subcategory_name'].'/'.$blog['slug'] }}">
 					<img class="mb-5 rounded-t" src="{{ url('media/blog').'/'.$blog['image'] }}" alt="">
 				</a>
-				<div class="pl-4 pr-4 flex justify-between items-center mb-5 text-gray-500">
-					<span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center rounded">{{ $blog['category_name'] }}</span>
-					<span class="text-sm">{{ $blog['created_at'] }}</span>
+				<div class="flex items-center pr-4 pl-4 gap-x-4 text-xs">
+					<a href="#" class="inline-flex items-center rounded bg-red-50 px-4 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">{{ $blog['category_name'] }}</a>
+					<time datetime="2020-03-16" class="text-gray-500">{{ $blog['created_at'] }}</time>
 				</div>
-				<h2 class="pl-4 pr-4 mb-2 text-xl font-bold tracking-tight text-gray-900"><a href="{{ url('blog').'/'.$blog['category_name'].'/'.$blog['subcategory_name'].'/'.$blog['slug'] }}">{{ $blog['title'] }}</a></h2>
-				<p class="pl-4 pr-4 mb-5 text-sm font-light text-gray-500">{{ $blog['short_description'] }}</p>
+				<div class="group relative pr-4 pl-4">
+					<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+						<a href="{{ url('blog').'/'.$blog['category_name'].'/'.$blog['subcategory_name'].'/'.$blog['slug'] }}"><span class="absolute inset-0"></span>{{ $blog['title'] }}</a>
+					</h3>
+					<p class="mt-3 mb-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ $blog['short_description'] }}</p>
+				</div>
 			</article>
-		@endforeach
+			@endforeach
 
 		</div>
 	</div>
-</section>
+</div>
 <!-- Blog End -->
 
 <!-- Subscription Start -->

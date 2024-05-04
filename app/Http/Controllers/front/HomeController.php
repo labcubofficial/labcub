@@ -22,7 +22,7 @@ class HomeController extends Controller
         $data['parent_categories'] = Category::where('status', '1')->where('parent_id','0')->get();
         $data['sub_categories'] = Category::where('status', '1')->where('parent_id','<>','0')->get();
 
-        $blogs = Blog::where('is_recommended','1')->get();
+        $blogs = Blog::where('is_recommended','1')->take(6)->get();
 
         $blog_arr = [];
         foreach($blogs as $blog){
