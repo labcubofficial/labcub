@@ -64,7 +64,8 @@
 <!-- Blog Start -->
 <div class="bg-white py-24 sm:py-32">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+		<h2 class="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 md:text-4xl">Latest Blogs</h2>
+		<div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
 			@foreach($blogs as $blog)
 			<article class="flex max-w-xl flex-col items-start justify-between rounded border">

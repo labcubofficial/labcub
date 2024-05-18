@@ -17,10 +17,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // Checking condition for maintenance
+        $is_maintenance = false;
+        if($is_maintenance)
+        {
+            return view('front.error.maintenance');
+        }
+
         $data = array();
         $data['title'] = 'Home';
-        $data['parent_categories'] = Category::where('status', '1')->where('parent_id','0')->get();
-        $data['sub_categories'] = Category::where('status', '1')->where('parent_id','<>','0')->get();
+        $data['parent_categories'] = Category::where('status', '1')->where('parent_id','0')->orderBy('order_by', 'asc')->get();
+        $data['sub_categories'] = Category::where('status', '1')->where('parent_id','<>','0')->orderBy('order_by', 'asc')->get();
 
         $blogs = Blog::where('is_recommended','1')->take(6)->get();
 
