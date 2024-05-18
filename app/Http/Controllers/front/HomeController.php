@@ -31,6 +31,8 @@ class HomeController extends Controller
 
         $blogs = Blog::where('is_recommended','1')->take(6)->get();
 
+        $data['latest_blog_title'] = Blog::orderBy('id', 'desc')->value('title');
+
         $blog_arr = [];
         foreach($blogs as $blog){
 
